@@ -1,0 +1,232 @@
+@font-face {
+              font-family: 'Dunking'; /* Name your font family */
+              src: url('resources/webpage-fonts/Quesha3.ttf'); /* Locate the .ttf file within your directory*/
+            }
+            * {
+              margin: 0;
+              padding: 0;
+            }
+            body {
+            background-color: rgb(255, 255, 255);
+            -webkit-animation: smoothbackgroundtransition 3s;
+            -moz-animation: smoothbackgroundtransition 3s;
+            -ms-animation: smoothbackgroundtransition 3s;
+            animation: smoothbackgroundtransition 3s;
+            overflow-x: hidden;
+            font-family: 'Dunking', sans-serif;
+            }
+            h1 {
+                -webkit-animation: smoothh1titletransition 3s;
+                -moz-animation: smoothh1titletransition 3s;
+                -ms-animation: smoothh1titletransition 3s;
+                animation: smoothh1titletransition 3s;
+                margin-inline: 0%;
+                font-size: 100px;
+                font-weight: bold;
+                text-shadow: 2px 2px lightblue;
+                text-align: center;
+                
+            }
+            h2 {
+              font-size: 50px;
+            }
+            p {
+              
+              font-size: 30px;
+            }
+            h2, p {
+              -webkit-animation: smothtexttransition 3s;
+              -moz-animation: smothtexttransition 3s;
+              -ms-animation: smothtexttransition 3s;
+              animation: smoothtexttransition 3s;
+              margin-inline: 0%;
+            }
+            h2 {
+              & p:nth-child(-n + 1){
+              padding-top: 100px;
+              }
+            }
+            button {
+              padding: 20px;
+              border-radius: 17px;
+              font-family: 'Dunking';
+              font-size: 30px;
+              font-weight: bold;
+              cursor:zoom-in;
+              justify-content: center;
+              text-align: center;
+
+            }
+            .absolutes:nth-child(odd) button
+            {
+              position:relative;
+              right: 0%;
+              left: 80%;
+              margin-top: 10%;
+            }
+            .absolutes:nth-child(even) button
+            {
+              position:relative;
+              right: 80%;
+              left: 0%;
+              margin-top: 10%;
+            }
+            #coding button {
+              background-color: rgb(255, 254, 173);
+              color:rgb(0, 17, 172);
+              border: none;
+            }
+            #design button {
+              background-color: rgb(223, 255, 136);
+              color: rgb(167, 28, 28);
+              border: none;
+            }
+            #dprinter button {
+              background-color: rgb(211, 161, 68);
+              color: rgb(112, 60, 114);
+              border: none; 
+            }
+            #it button {
+              background-color: rgb(84, 85, 59);
+              color: rgb(228, 222, 210);
+              border: none;
+            }
+            #personal button {
+              background-color: rgb(142, 96, 146); 
+              color: rgb(255, 255, 255);
+              border: none;
+              
+            }
+            
+            .absolutes:nth-child(even) .view-poll {
+              transform: translateX(100%);
+              width: 100vw;
+              height: 100vh;
+              transition: all 1s;
+              opacity: 0;
+            }
+            .absolutes:nth-child(odd) .view-poll {
+              transform: translateX(-100%);
+              width: 100vw;
+              height: 100vh;
+              transition: all 1s;
+              opacity: 0;
+            }
+            .visible {
+              transform: translateX(0%);
+              width: 100vw;
+              height: 100vh;
+              opacity: 1;
+              transition: all 2.3s;
+            }
+            #coding-absolute {
+              background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(224, 102, 255, 0.174) 40%, rgba(224, 102, 255, 0.174) 50%, rgba(224, 102, 255, 0.174) 60%, rgba(255,255,255,0) 100%);
+            }
+            #coding {
+              background-image: url("resources/frontpage-media/python-logo-2.png"), url("resources/frontpage-media/vscode.png"), url("resources/frontpage-media/CSharp.png");
+              background-size: auto 22%, auto 19%, auto 22%; /* Adjusts the size of each image */
+              background-position: 83% 30%, 76% 60%, 96% center; /* Positions each image */
+              background-repeat: no-repeat, no-repeat, no-repeat;
+            }
+            #coding .caption {
+              position: absolute;
+              width: 60%;
+              right: 100%;
+              left: 0%;
+              margin-left: 2%;
+              top: 13%;
+            }
+            #design-absolute {
+              background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255, 157, 29, 0.209) 40%, rgba(255, 157, 29, 0.209) 50%, rgba(255, 157, 29, 0.209) 60%, rgba(255,255,255,0) 100%);
+            }
+            #design {
+              background-image: url("resources/frontpage-media/blender.png"), url("resources/frontpage-media/gimp.png"), url("resources/frontpage-media/photoshop-64.png");
+              background-size: auto 22%, auto 22%, auto 20%;
+              background-position: 16% 23%, 24% 60%, 4% center;
+              background-repeat: no-repeat, no-repeat, no-repeat;
+            }
+            #design .caption {
+              width:60%;
+              position: absolute;
+              right: 0%;
+              margin-right: 2%;
+              top: 13%;
+            }
+
+            #dprinter-absolute {
+              background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(102, 255, 173, 0.174) 40%, rgba(102, 255, 173, 0.174) 50%, rgba(102, 255, 173, 0.174) 60%, rgba(255,255,255,0) 100%);
+            }
+            #dprinter {
+              background-image: url("resources/frontpage-media/curafix.png"), url("resources/frontpage-media/slicerfix.png"), url("resources/frontpage-media/thingiverse.png");
+              background-size: auto 20%, auto 27%, auto 22%;
+              background-position: 83% 30%, 76% 60%, 96% center;
+              background-repeat: no-repeat, no-repeat, no-repeat;
+            }
+            #dprinter .caption {
+              width: 60%;
+              position: absolute;
+              margin-left: 2%;
+              top: 13%;
+            }
+            #it-absolute {
+              background-image: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(28, 168, 255, 0.263) 40%, rgba(28, 168, 255, 0.263) 50%, rgba(28, 168, 255, 0.263) 60%, rgb(122, 204, 255) 100%);
+            }
+            #it {
+              background-image: url("resources/frontpage-media/windows.png"), url("resources/frontpage-media/debian.png"), url("resources/frontpage-media/troubleshoting.png");
+              background-size: auto 22%, auto 22%, auto 20%;
+              background-position: 16% 23%, 24% 60%, 4% center;
+              background-repeat: no-repeat, no-repeat, no-repeat;
+            }
+            #it .caption {
+              width:60%;
+              position: absolute;
+              right: 0%;
+              margin-right: 2%;
+              top: 13%;
+            }
+            #personal-absolute {
+              background-image: linear-gradient(180deg, rgb(122, 204, 255) 0%, rgb(53, 3, 3) 70%);
+              height: auto;
+              margin: 0;
+            }
+            #personal .caption {
+              margin-left: 7%;
+              margin-right: 7%;
+              padding-bottom: 7%;
+              background: linear-gradient(180deg, rgb(165, 29, 165) 0%, rgb(255, 252, 206) 30%);
+              background-clip: text;
+              color: transparent;
+            }
+            #personal .caption h1 {
+              text-shadow: none;
+            }
+            #personal {
+              height: auto;
+              margin: 0;
+            }
+            #personal .caption #end {
+              display: flex;
+              justify-content: center;
+              align-items: end;
+              height: 400px;
+            }
+            #personal .caption #end button {
+              margin-bottom: 1px;
+              margin-left: 10px;
+              margin-right: 10px;
+            }
+
+            
+
+        @keyframes smoothbackgroundtransition {
+            from {background-color: rgb(3, 7, 39);}
+            to {background-color: rgb(255, 255, 255);}
+        }
+        @keyframes smoothh1titletransition {
+                from{color:rgb(249, 230, 255)}
+                to{color:rgb(3, 39, 39)}
+            }
+        @keyframes smoothtexttransition {
+                from{color:rgb(255, 253, 219)}
+                to{color:rgb(0, 0, 0)}
+            }
