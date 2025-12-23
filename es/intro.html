@@ -1,21 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
           <link rel="stylesheet" href="../intro.css">
-          <script>
-            window.addEventListener("scroll", () => {
-              const element = document.querySelector('.view-poll');
-              const test = document.querySelectorAll("main");
-              if (element.classList.contains("visible") == true){
-                element.classList.remove("view-poll");
-              }
-              const rect = element.getBoundingClientRect();
-              const windowHeight = window.innerHeight;
-              if (rect.top < windowHeight) {
-                element.classList.add("visible");
-              }
-            });
-          </script>
+          
           <title>Intro rápida</title>
     </head>
     <body>
@@ -26,7 +13,7 @@
                 <h1>Programación</h1>
                 <h2>Lenguajes adquiridos, explicación de la funcionalidad de los proyectos y sus capacidades de implementación, muestras de código con comentarios</h2>
                 <p>Una buena manera de darme a conocer, programar me ha ofrecido un amplio canvas, en el que he canalizado mis principales intereses y preocupaciones en la creación de herramientas funcionales, que me ayudan a sentirme realizado y útil fuera de un mercado laboral que no puede ofrecer estas experiencias de manera orgánica.</p>
-                <button onclick="document.location='Coding/coding.html'">Analiza ese código</button>
+                <button id="codingbutton">Analiza ese código</button>
               </div>
             </div>
             </div>
@@ -47,7 +34,7 @@
                 <h1>Impresión 3D</h1>
                 <h2>Modificaciones de hardware, materiales usados, expresiones artísticas</h2>
                 <p>Aquí explico mi largo, extenso y tedioso proceso de aprendizaje para dominar una Anet A8, aportando inesperados y valiosos conocimientos sobre hardware, electronica y G-Code en el proceso</p>
-                <button onclick="document.location='3D Printing/3dprinting.html'">El software conoce al hardware</button>
+                <button onclick="document.location='Impresion 3D/3dprinting.html'">El software conoce al hardware</button>
               </div>
             </div>
           </div>
@@ -77,6 +64,46 @@
             </div>
           </div>
           </main>
-
+          <script>
+            function transfercss(section) {
+              const cs = window.getComputedStyle(document.getElementById(section));
+              const location = document.getElementById(section).getBoundingClientRect();
+              const coords = {
+                  left:   location.left,   // distance from viewport’s left edge
+                  top:    location.top,    // distance from viewport’s top edge
+                  right:  location.right,
+                  bottom: location.bottom,
+                  width:  location.width,
+                  height: location.height,
+                  x:      location.x,      // alias for left
+                  y:      location.y       // alias for top
+              };
+              const result = {};
+              // getComputedStyle returns a live, read‑only list of properties
+              for (let i = 0; i < cs.length; i++) {
+                const propName = cs[i];          // e.g., "font-size"
+                result[propName] = cs.getPropertyValue(propName);
+              }
+              sessionStorage.setItem("background", result["background-image"])
+              sessionStorage.setItem("coords", JSON.stringify(coords))
+              window.location.href = "Programacion/programacion.html"
+            } 
+            const codbutt = document.getElementById("codingbutton")
+            codbutt.addEventListener("click", () => transfercss("coding-absolute"))
+          </script>
+          <script>
+            window.addEventListener("scroll", () => {
+              const element = document.querySelector('.view-poll');
+              const test = document.querySelectorAll("main");
+              if (element.classList.contains("visible") == true){
+                element.classList.remove("view-poll");
+              }
+              const rect = element.getBoundingClientRect();
+              const windowHeight = window.innerHeight;
+              if (rect.top < windowHeight) {
+                element.classList.add("visible");
+              }
+            });
+          </script>
     </body>
 </html>

@@ -1,0 +1,35 @@
+@font-face {
+              font-family: 'Dunking'; /* Name your font family */
+              src: url('../../resources/webpage-fonts/Quesha3.ttf'); /* Locate the .ttf file within your directory*/
+            }
+body {
+    
+            font-family: 'Dunking', sans-serif;
+            }
+
+h1 {
+
+                font-size: 50px;
+                font-weight: bold;
+                text-shadow: 2px 2px lightblue;
+                
+            }
+h2 {
+              font-size: 30px;
+            }
+            p {
+              
+              font-size: 30px;
+            }
+
+#mainbod {
+    position: absolute;
+    overflow: visible;
+    width: 100pc;
+    height: 100pc;
+}
+#bodaux {
+    width: 100pc;
+    height: 100pc;
+    position: fixed;
+}

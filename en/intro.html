@@ -13,7 +13,7 @@
                 <h1>Coding</h1>
                 <h2>Aquired lenguages, explanation of the functionality of the projects and their capabilities for implementation, presentation of code with commentary.</h2>
                 <p>A good way of getting known, programming gives me an open canvas, in which I have tuned in to my main interests and worries, transforming them in functional tools, a relief in terms of personal realization that the job marked rarely fulfills in an organic way.</p>
-                <button id="codingbutton" onclick="document.location='Coding/coding.html'">Analize that code</button>
+                <button id="codingbutton">Analize that code</button>
               </div>
             </div>
             </div>
@@ -66,6 +66,33 @@
           
           </main>
           <script>
+            function transfercss(section) {
+              const cs = window.getComputedStyle(document.getElementById(section));
+              const location = document.getElementById(section).getBoundingClientRect();
+              const coords = {
+                  left:   location.left,   // distance from viewport’s left edge
+                  top:    location.top,    // distance from viewport’s top edge
+                  right:  location.right,
+                  bottom: location.bottom,
+                  width:  location.width,
+                  height: location.height,
+                  x:      location.x,      // alias for left
+                  y:      location.y       // alias for top
+              };
+              const result = {};
+              // getComputedStyle returns a live, read‑only list of properties
+              for (let i = 0; i < cs.length; i++) {
+                const propName = cs[i];          // e.g., "font-size"
+                result[propName] = cs.getPropertyValue(propName);
+              }
+              sessionStorage.setItem("background", result["background-image"])
+              sessionStorage.setItem("coords", JSON.stringify(coords))
+              window.location.href = "Coding/coding.html"
+            } 
+            const codbutt = document.getElementById("codingbutton")
+            codbutt.addEventListener("click", () => transfercss("coding-absolute"))
+          </script>
+          <script>
             window.addEventListener("scroll", () => {
               const element = document.querySelector('.view-poll');
               const test = document.querySelectorAll("main");
@@ -79,5 +106,6 @@
               }
             });
           </script>
+          
     </body>
 </html>
