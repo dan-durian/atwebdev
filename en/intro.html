@@ -2,20 +2,7 @@
 <html lang="en">
     <head>
           <link rel="stylesheet" href="../intro.css">
-          <script>
-            window.addEventListener("scroll", () => {
-              const element = document.querySelector('.view-poll');
-              const test = document.querySelectorAll("main");
-              if (element.classList.contains("visible") == true){
-                element.classList.remove("view-poll");
-              }
-              const rect = element.getBoundingClientRect();
-              const windowHeight = window.innerHeight;
-              if (rect.top < windowHeight) {
-                element.classList.add("visible");
-              }
-            });
-          </script>
+
           <title>Short Introduction</title>
     </head>
     <body>
@@ -26,7 +13,7 @@
                 <h1>Coding</h1>
                 <h2>Aquired lenguages, explanation of the functionality of the projects and their capabilities for implementation, presentation of code with commentary.</h2>
                 <p>A good way of getting known, programming gives me an open canvas, in which I have tuned in to my main interests and worries, transforming them in functional tools, a relief in terms of personal realization that the job marked rarely fulfills in an organic way.</p>
-                <button onclick="document.location='Coding/coding.html'">Analize that code</button>
+                <button id="codingbutton" onclick="document.location='Coding/coding.html'">Analize that code</button>
               </div>
             </div>
             </div>
@@ -78,6 +65,19 @@
           </div>
           
           </main>
-
+          <script>
+            window.addEventListener("scroll", () => {
+              const element = document.querySelector('.view-poll');
+              const test = document.querySelectorAll("main");
+              if (element.classList.contains("visible") == true){
+                element.classList.remove("view-poll");
+              }
+              const rect = element.getBoundingClientRect();
+              const windowHeight = window.innerHeight;
+              if (rect.top < windowHeight) {
+                element.classList.add("visible");
+              }
+            });
+          </script>
     </body>
 </html>
