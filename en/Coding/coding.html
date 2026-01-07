@@ -3,23 +3,26 @@
     <head>
         <link rel="stylesheet" href="../../es/Programacion/progstyle.css">
     </head>
-    <body id="mainbod">
+    <body>
+        <div id="mainbod">
         <div id="bodaux">
         <div id="python">
             <h1>Python projects.</h1>
         </div>
         <div id="csharp"></div>
             <h1>C# projects.</h1>
-        </div>
+        
         <div id="HTML">
             <h1>HTML and CSS projects.</h1>
             <h2>It's a me, a webpage! Press F12.</h2>
             <p>Seriously, I did this without presets.</p>
         </div>
         </div>
+        </div>
     </body>
             <script>
-            const maindiv = document.getElementById("bodaux")
+            const maindiv = document.getElementById("mainbod")
+            const auxdiv = document.getElementById("bodaux")
             maindiv.style.backgroundImage = sessionStorage.getItem("background");
             //if (!maindiv.style.backgroundImage) return;
             //document.body.style.backgroundSize   = 'cover';
@@ -38,6 +41,11 @@
                 maindiv.style.height = `${coords.height}px`;
                 maindiv.style.x = `(${coords.x}px)`;
                 maindiv.style.y = `(${coords.y}px)`;
+                auxdiv.style.position = "absolute"
+                auxdiv.style.x = `${Math.abs(coords.x)}px`;
+                auxdiv.style.y = `${Math.abs(coords.y)}px`;
+                auxdiv.style.top = `${Math.abs(coords.top)}px`;
+                console.log(Math.abs(coords.top*2))
             }
 
         </script>
