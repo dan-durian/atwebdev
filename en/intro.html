@@ -34,7 +34,7 @@
                 <h1>3D Printing</h1>
                 <h2>Hardware modifications, materials used, technical modeling, artistic expresions</h2>
                 <p>Here I explain my long and tedious learning process of an Anet A8, bringing unexpected and valuable knowledge about hardware, the lingo of CNC machinery, electronics and G-Code in the process.</p>
-                <button onclick="document.location='3D Printing/3dprinting.html'">When software meets hardware</button>
+                <button id="3dbutton">When software meets hardware</button>
               </div>
             </div>
           </div>
@@ -87,9 +87,14 @@
               }
               sessionStorage.setItem("background", result["background-image"])
               sessionStorage.setItem("coords", JSON.stringify(coords))
-              window.location.href = "Coding/coding.html"
+              if (section == "coding-absolute") {
+              window.location.href = "Coding/coding.html"}
+              if (section == "dprinter-absolute") {
+              window.location.href = "3D Printing/3dprinting.html"}
             } 
             const codbutt = document.getElementById("codingbutton")
+            const threedbutt = document.getElementById("3dbutton")
+            threedbutt.addEventListener("click", () => transfercss("dprinter-absolute"))
             codbutt.addEventListener("click", () => transfercss("coding-absolute"))
           </script>
           <script>

@@ -26,6 +26,7 @@
     </body>
             <script>
             const maindiv = document.getElementById("mainbod")
+            const auxdiv = document.getElementById("bodaux")
             maindiv.style.backgroundImage = sessionStorage.getItem("background");
             //if (!maindiv.style.backgroundImage) return;
             //document.body.style.backgroundSize   = 'cover';
@@ -44,7 +45,16 @@
                 maindiv.style.height = `${coords.height}px`;
                 maindiv.style.x = `(${coords.x}px)`;
                 maindiv.style.y = `(${coords.y}px)`;
+                auxdiv.style.position = "absolute"
+                auxdiv.style.x = `${Math.abs(coords.x)}px`;
+                auxdiv.style.y = `${Math.abs(coords.y)}px`;
+                auxdiv.style.top = `${Math.abs(coords.top)}px`;
+                console.log(Math.abs(coords.top*2))
             }
+            function backgroundadjust(){
+                maindiv.style.width = "100%"
+                maindiv.style.right = "100%"    };
+            window.addEventListener("resize", backgroundadjust);
 
         </script>
 </html>

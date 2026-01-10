@@ -34,7 +34,7 @@
                 <h1>Impresión 3D</h1>
                 <h2>Modificaciones de hardware, materiales usados, expresiones artísticas</h2>
                 <p>Aquí explico mi largo, extenso y tedioso proceso de aprendizaje para dominar una Anet A8, aportando inesperados y valiosos conocimientos sobre hardware, electronica y G-Code en el proceso</p>
-                <button onclick="document.location='Impresion 3D/3dprinting.html'">El software conoce al hardware</button>
+                <button id="3dbutton">El software conoce al hardware</button>
               </div>
             </div>
           </div>
@@ -86,9 +86,14 @@
               }
               sessionStorage.setItem("background", result["background-image"])
               sessionStorage.setItem("coords", JSON.stringify(coords))
-              window.location.href = "Programacion/programacion.html"
+              if (section == "coding-absolute") {
+              window.location.href = "Programacion/programacion.html"}
+              if (section == "dprinter-absolute") {
+              window.location.href = "Impresion 3D/3dprinting.html"}
             } 
             const codbutt = document.getElementById("codingbutton")
+            const threedbutt = document.getElementById("3dbutton")
+            threedbutt.addEventListener("click", () => transfercss("dprinter-absolute"))
             codbutt.addEventListener("click", () => transfercss("coding-absolute"))
           </script>
           <script>
