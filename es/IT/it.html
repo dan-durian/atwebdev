@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <style>
+        <title>Informática</title>
+        <link rel="stylesheet" href="itstyle.css">
 
-        </style>
     </head>
     <body>
+        <div id="mainbod">
+        <div id="bodaux">
         <div id="windows">
             <h1>Windows.</h1>
             <h2>Functional prints.</h2>
@@ -13,11 +15,51 @@
         </div>
         <div id="linux"></div>
             <h1>Linux</h1>
-        </div>
         <div id="net">
             <h1>Network and server-side administration.</h1>
             <h2>It's a me, a webpage! Press F12.</h2>
             <p>Seriously, I did this without presets.</p>
         </div>
+        </div>
+    </div>
     </body>
+        <script>
+            const maindiv = document.getElementById("mainbod")
+            const auxdiv = document.getElementById("bodaux")
+            maindiv.style.backgroundImage = sessionStorage.getItem("background");
+            //if (!maindiv.style.backgroundImage) return;
+            //document.body.style.backgroundSize   = 'cover';
+            const coords = JSON.parse(sessionStorage.getItem("coords"));
+            //if (!coords) return;
+            if (coords) {
+                maindiv.style.position = "absolute";
+                maindiv.style.top = `${coords.top}px`;
+                console.log("${coords.top}px")
+                console.log(coords.y)
+                console.log(coords.top)
+                maindiv.style.bottom = `${coords.bottom}px`;
+                maindiv.style.left = `${coords.left}px`;
+                maindiv.style.right = `${coords.right}px`;
+                maindiv.style.width = `${coords.width}px`;
+                maindiv.style.height = `${coords.height}px`;
+                maindiv.style.x = `(${coords.x}px)`;
+                maindiv.style.y = `(${coords.y}px)`;
+                auxdiv.style.position = "absolute";
+                if (coords.x < 0){
+                auxdiv.style.x = `${Math.abs(coords.x)}px`;
+                }
+                if (coords.y < 0){
+                auxdiv.style.y = `${Math.abs(coords.y)}px`;
+                }
+                if (coords.top < 0){
+                auxdiv.style.top = `${Math.abs(coords.top)}px`;
+                }
+                //console.log(Math.abs(coords.top*2))
+            }
+            function backgroundadjust(){
+                maindiv.style.width = "100%"
+                maindiv.style.right = "100%"    };
+            window.addEventListener("resize", backgroundadjust);
+
+        </script>
 </html>

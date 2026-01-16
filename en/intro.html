@@ -24,7 +24,7 @@
                 <h2>Tools of preference, domain of concepts, portfolio.</h2>
                 <p>Inborn curiosity, desire of express myself artistically, or the capability of create objects that otherwise would be trapped on my mind.</p>
                 <p>All valid reasons to adventure myself in the usage of graphic design tools like Blender, Gimp, or Photoshop.</p>
-                <button onclick="document.location='Graphic design/gdesign.html'">Admire the masterpieces</button>
+                <button id="designbutton">Admire the masterpieces</button>
               </div>
             </div>
           </div>
@@ -91,11 +91,20 @@
               window.location.href = "Coding/coding.html"}
               if (section == "dprinter-absolute") {
               window.location.href = "3D Printing/3dprinting.html"}
-            } 
+              if (section == "design-absolute") {
+              window.location.href = "Graphic design/gdesign.html"}              
+              if (section == "it-absolute") {
+              window.location.href = "IT/it.html"}              
+            }                
+            
             const codbutt = document.getElementById("codingbutton")
             const threedbutt = document.getElementById("3dbutton")
+            const designbutt = document.getElementById("designbutton")
+            const itbutt = document.getElementById("itbutton")
             threedbutt.addEventListener("click", () => transfercss("dprinter-absolute"))
             codbutt.addEventListener("click", () => transfercss("coding-absolute"))
+            designbutt.addEventListener("click", () => transfercss("design-absolute"))
+            itbutt.addEventListener("click", () => transfercss("it-absolute"))
           </script>
           <script>
             window.addEventListener("scroll", () => {

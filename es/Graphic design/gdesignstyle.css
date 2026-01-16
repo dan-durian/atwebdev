@@ -3,7 +3,7 @@
               src: url('../../resources/webpage-fonts/Quesha3.ttf'); /* Locate the .ttf file within your directory*/
             }
 body {
-            background-color: rgb(3, 88, 0);
+            background-color: rgb(231, 208, 104);
             -webkit-animation: smoothbackgroundtransition 6s;
             -moz-animation: smoothbackgroundtransition 6s;
             -ms-animation: smoothbackgroundtransition 6s;
@@ -15,7 +15,7 @@ h1 {
 
                 font-size: 50px;
                 font-weight: bold;
-                text-shadow: 2px 2px rgb(211, 98, 23);
+                text-shadow: 2px 2px rgb(91, 89, 199);
                 
             }
 h2 {
@@ -46,9 +46,9 @@ h2, p, h1 {
 }
 @keyframes smoothbackgroundtransition {
             from {background-color: rgba(3, 7, 39, 0);}
-            to {background-color: rgb(3, 88, 0);}
+            to {background-color: rgb(231, 208, 104);}
         }
         @keyframes smoothtexttransition {
                 from{color:rgba(255, 253, 219, 0); text-shadow: 2px 2px rgba(211, 98, 23, 0);}
-                to{color:rgb(255, 255, 255); text-shadow: 2px 2px rgb(211, 98, 23);}
+                to{color:rgb(255, 255, 255); text-shadow: 2px 2px rgb(91, 89, 199);}
             }

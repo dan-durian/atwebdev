@@ -7,6 +7,7 @@
     </head>
     <body>
         <main>
+          <div id="loading"></div>
             <div class="absolutes" id="coding-absolute">
             <div class="visible" id="coding">
               <div class="caption">
@@ -24,7 +25,7 @@
                 <h2>Herramientas de preferencia, dominio de conceptos, portfolio</h2>
                 <p>La curiosidad inata, el deseo de expresarme artísticamente, o la capacidad de crear objetos que solo existen en mi mente.</p>
                 <p>Todos motivos validos para haberme aventurado en herramientas de diseño gráfico como pueden ser Blender, Gimp o Photoshop.</p>
-                <button onclick="document.location='Graphic design/gdesign.html'">Admira las obras maestras</button>
+                <button id="designbutton">Admira las obras maestras</button>
               </div>
             </div>
           </div>
@@ -44,7 +45,7 @@
                 <h1>Mantenimiento de sistemas</h1>
                 <h2>Plataformas y tecnologías de interés, interconectividad de sistemas, fundamentos de ciber-seguridad</h2>
                 <p>Descripción breve de los sistemas operativos y tecnicismos en los cuales tengo amplios conocimientos, incluyendo subneting, el modelo OSI, DNS, Windows Server, SQL etc</p>
-                <button onclick="document.location='IT/it.html'">Apaga y enciéndelo de nuevo</button>
+                <button id="itbutton">Apaga y enciéndelo de nuevo</button>
               </div>
             </div>
           </div>
@@ -90,11 +91,20 @@
               window.location.href = "Programacion/programacion.html"}
               if (section == "dprinter-absolute") {
               window.location.href = "Impresion 3D/3dprinting.html"}
-            } 
+              if (section == "design-absolute") {
+              window.location.href = "Graphic design/gdesign.html"}
+              if (section == "it-absolute") {
+              window.location.href = "IT/it.html"}              
+            }                
+            
             const codbutt = document.getElementById("codingbutton")
             const threedbutt = document.getElementById("3dbutton")
+            const designbutt = document.getElementById("designbutton")
+            const itbutt = document.getElementById("itbutton")
             threedbutt.addEventListener("click", () => transfercss("dprinter-absolute"))
             codbutt.addEventListener("click", () => transfercss("coding-absolute"))
+            designbutt.addEventListener("click", () => transfercss("design-absolute"))
+            itbutt.addEventListener("click", () => transfercss("it-absolute"))
           </script>
           <script>
             window.addEventListener("scroll", () => {
@@ -109,6 +119,13 @@
                 element.classList.add("visible");
               }
             });
+            window.onload = function () {
+                const tetera = document.getElementById("loading");
+                if (tetera) {
+                    tetera.classList.add('fade-out');          // triggers CSS transition
+                    setTimeout(() => { tetera.remove(); }, 500); // remove after animation
+                }
+            };
           </script>
     </body>
 </html>
