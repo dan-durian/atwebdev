@@ -73,7 +73,7 @@
             }
             #loading {
               background: url("resources/loading.gif") no-repeat center center;
-              background-color: black;
+              background-color: rgba(0, 0, 0, 0.575);
               position: fixed;
               top: 0;
               left: 0;
