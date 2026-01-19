@@ -122,7 +122,9 @@
             window.onload = function () {
                 const tetera = document.getElementById("loading");
                 if (tetera) {
-                    tetera.classList.add('fade-out');          // triggers CSS transition
+                   setTimeout(() => {
+                    tetera.classList.add('fade-out');
+                   }, 500000);           // triggers CSS transition
                     setTimeout(() => { tetera.remove(); }, 500); // remove after animation
                 }
             };

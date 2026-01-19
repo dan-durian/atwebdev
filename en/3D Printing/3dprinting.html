@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="../../es/Impresion 3D/3dstyle.css">
     </head>
     <body>
+        <div id="loading"></div>
         <div id="mainbod">
         <div id="bodaux">
         <div id="models">
@@ -60,6 +61,14 @@
                 maindiv.style.width = "100%"
                 maindiv.style.right = "100%"    };
             window.addEventListener("resize", backgroundadjust);
-
+            window.onload = function () {
+                const tetera = document.getElementById("loading");
+                if (tetera) {
+                   setTimeout(() => {
+                    tetera.classList.add('fade-out');
+                   }, 500000);           // triggers CSS transition
+                    setTimeout(() => { tetera.remove(); }, 500); // remove after animation
+                }
+            };
         </script>
 </html>

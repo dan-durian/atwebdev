@@ -72,7 +72,7 @@
               margin-top: 10%;
             }
             #loading {
-              background: url("resources/loading.gif") no-repeat center center;
+              background: url("resources/loading2.gif") no-repeat center center;
               background-color: rgba(0, 0, 0, 0.575);
               position: fixed;
               top: 0;
@@ -84,6 +84,7 @@
             #loading.fade-out {
                 opacity: 0;
                 visibility: hidden;
+                transition: opacity 1s ease;
                 display: none;   /* optional – hides the element after fade */
             }
             #coding button {
