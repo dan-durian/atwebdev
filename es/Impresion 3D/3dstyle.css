@@ -13,17 +13,24 @@ body {
 
 h1 {
 
-                font-size: 50px;
-                font-weight: bold;
-                text-shadow: 2px 2px rgb(211, 98, 23);
-                
+              font-size: 50px;
+              font-weight: bold;
+              text-shadow: 2px 2px rgb(211, 98, 23);
+              margin-left: 7%;
+              margin-right: 7%;
+              margin-inline: 0%;
             }
 h2 {
               font-size: 30px;
+              margin-left: 10%;
+              margin-right: 10%;
+              margin-inline: 0%;
             }
             p {
-              
               font-size: 30px;
+              margin-left: 17%;
+              margin-right: 17%;
+              margin-inline: 0%;
             }
 h2, p, h1 {
               -webkit-animation: smothtexttransition 7s;
