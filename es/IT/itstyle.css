@@ -46,7 +46,7 @@ h2, p, h1 {
 }
 #loading {
   background: url("../../resources/loading2.gif") no-repeat center center;
-  background-color: rgba(0, 0, 0, 0.575);
+  background-color: rgba(0, 0, 0, 0.26);
   position: fixed;
   top: 0;
   left: 0;
