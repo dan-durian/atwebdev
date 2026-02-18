@@ -10,7 +10,120 @@ body {
             animation: smoothbackgroundtransition 6s;
             font-family: 'Dunking', sans-serif;
             }
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+body .hll { background-color: #ffffcc }
+body .c { color: #3D7B7B; font-style: italic } /* Comment */
+body .err { border: 1px solid #F00 } /* Error */
+body .k { color: #008000; font-weight: bold } /* Keyword */
+body .o { color: #666 } /* Operator */
+body .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+body .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+body .cp { color: #9C6500 } /* Comment.Preproc */
+body .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+body .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+body .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+body .gd { color: #A00000 } /* Generic.Deleted */
+body .ge { font-style: italic } /* Generic.Emph */
+body .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+body .gr { color: #E40000 } /* Generic.Error */
+body .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+body .gi { color: #008400 } /* Generic.Inserted */
+body .go { color: #717171 } /* Generic.Output */
+body .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+body .gs { font-weight: bold } /* Generic.Strong */
+body .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+body .gt { color: #04D } /* Generic.Traceback */
+body .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+body .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+body .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+body .kp { color: #008000 } /* Keyword.Pseudo */
+body .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+body .kt { color: #B00040 } /* Keyword.Type */
+body .m { color: #666 } /* Literal.Number */
+body .s { color: #BA2121 } /* Literal.String */
+body .na { color: #687822 } /* Name.Attribute */
+body .nb { color: #008000 } /* Name.Builtin */
+body .nc { color: #00F; font-weight: bold } /* Name.Class */
+body .no { color: #800 } /* Name.Constant */
+body .nd { color: #A2F } /* Name.Decorator */
+body .ni { color: #717171; font-weight: bold } /* Name.Entity */
+body .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+body .nf { color: #00F } /* Name.Function */
+body .nl { color: #767600 } /* Name.Label */
+body .nn { color: #00F; font-weight: bold } /* Name.Namespace */
+body .nt { color: #008000; font-weight: bold } /* Name.Tag */
+body .nv { color: #19177C } /* Name.Variable */
+body .ow { color: #A2F; font-weight: bold } /* Operator.Word */
+body .w { color: #BBB } /* Text.Whitespace */
+body .mb { color: #666 } /* Literal.Number.Bin */
+body .mf { color: #666 } /* Literal.Number.Float */
+body .mh { color: #666 } /* Literal.Number.Hex */
+body .mi { color: #666 } /* Literal.Number.Integer */
+body .mo { color: #666 } /* Literal.Number.Oct */
+body .sa { color: #BA2121 } /* Literal.String.Affix */
+body .sb { color: #BA2121 } /* Literal.String.Backtick */
+body .sc { color: #BA2121 } /* Literal.String.Char */
+body .dl { color: #BA2121 } /* Literal.String.Delimiter */
+body .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+body .s2 { color: #BA2121 } /* Literal.String.Double */
+body .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+body .sh { color: #BA2121 } /* Literal.String.Heredoc */
+body .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+body .sx { color: #008000 } /* Literal.String.Other */
+body .sr { color: #A45A77 } /* Literal.String.Regex */
+body .s1 { color: #BA2121 } /* Literal.String.Single */
+body .ss { color: #19177C } /* Literal.String.Symbol */
+body .bp { color: #008000 } /* Name.Builtin.Pseudo */
+body .fm { color: #00F } /* Name.Function.Magic */
+body .vc { color: #19177C } /* Name.Variable.Class */
+body .vg { color: #19177C } /* Name.Variable.Global */
+body .vi { color: #19177C } /* Name.Variable.Instance */
+body .vm { color: #19177C } /* Name.Variable.Magic */
+body .il { color: #666 } /* Literal.Number.Integer.Long */
+div .highlight.content {background-color: #ffd699;}
+.collapsible {
+  background-color: #ffa600;
+  cursor: pointer;
+  padding: 18px;
+  width: 10%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 25px;
+  justify-content: center;
+  place-items: center;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;
+-webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;
+-moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;
+font-family: 'Dunking';
+}
 
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+-webkit-animation: smoothbuttonhover 1s;
+              -moz-animation: smoothbuttonhover 1s;
+              -ms-animation: smoothbuttonhover 1s;
+              animation: smoothbuttonhover 1s;
+              animation-iteration-count: infinite;
+  animation-direction: forward;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  box-shadow: 0px 0px 35px 10px rgb(71, 0, 88) inset;
+-webkit-box-shadow: 0px 0px 35px 10px rgb(71, 0, 88) inset;
+-moz-box-shadow: 0px 0px 35px 10px rgb(71, 0, 88) inset;
+}
 h1 {
 
                 font-size: 50px;
@@ -25,7 +138,7 @@ h2 {
               
               font-size: 30px;
             }
-h2, p, h1 {
+h2, p, h1, button {
               -webkit-animation: smothtexttransition 3s;
               -moz-animation: smothtexttransition 3s;
               -ms-animation: smothtexttransition 3s;
@@ -68,6 +181,7 @@ h2, p, h1 {
     transition: opacity 1s ease;
     display: none;   /* optional – hides the element after fade */
 }
+
 @keyframes smoothbackgroundtransition {
             from {background-color: rgba(3, 7, 39, 0);}
             to {background-color: rgb(71, 0, 88);}
@@ -76,3 +190,21 @@ h2, p, h1 {
                 from{color:rgba(255, 253, 219, 0)}
                 to{color:rgb(255, 255, 255)}
             }
+@keyframes smoothbuttonhover {
+  0%{
+    background-color: #ffa600;
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;
+-webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;
+-moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;}
+  50%{
+      background-color: #ff9100;
+box-shadow: 0px 0px 15x 0px rgb(88, 0, 160) inset;
+-webkit-box-shadow: 0px 0px 15px 0px rgb(88, 0, 160) inset;
+-moz-box-shadow: 0px 0px 15px 0px rgb(88, 0, 160) inset;
+  }
+    100%{
+    background-color: #ffa600;
+    box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;
+-webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;
+-moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;}
+}

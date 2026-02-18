@@ -16,8 +16,1016 @@
             <h2>GTK based lenguage learning tool.</h2>
             <p>Small endeavor at programming natively for linux gnome's UI in a period where I used this OS as a main daily driver.</p>
             <p>This application acts as a foundation for custom database's and quick reminder of related concepts I find hard to memorize in the process of learing a foregin language.</p>
+            <button type="button" class="collapsible">Check code</button>
+            <div class="content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span></pre></div></td><td class="code"><div><pre><span></span><span class="ch">#!/usr/bin/env</span>
+<span class="c1">#https://python-gtk-3-tutorial.readthedocs.io/en/latest/index.html</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gi</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="n">gi</span><span class="o">.</span><span class="n">require_version</span><span class="p">(</span><span class="s2">&quot;Gtk&quot;</span><span class="p">,</span> <span class="s2">&quot;3.0&quot;</span><span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gi.repository</span><span class="w"> </span><span class="kn">import</span> <span class="n">Gtk</span><span class="p">,</span> <span class="n">Gdk</span><span class="p">,</span> <span class="n">GLib</span>
+
+
+<span class="n">gladeFile</span> <span class="o">=</span> <span class="s2">&quot;ui2.glade&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Main</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">builder</span> <span class="o">=</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">Builder</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">add_from_file</span><span class="p">(</span><span class="n">gladeFile</span><span class="p">)</span>
+        <span class="c1">#self.builder.connect_signals(self)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">archive1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Loin&quot;</span><span class="p">,</span> <span class="s2">&quot;Long&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Aime&quot;</span><span class="p">,</span> <span class="s2">&quot;Aimer&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Désirer&quot;</span><span class="p">,</span> <span class="s2">&quot;Veux&quot;</span><span class="p">],</span> <span class="s2">&quot;Qui&quot;</span><span class="p">,</span> <span class="s2">&quot;Vers&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;Dessus&quot;</span><span class="p">,</span> <span class="s2">&quot;Vite&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Puis&quot;</span><span class="p">,</span> <span class="s2">&quot;Après&quot;</span><span class="p">],</span> <span class="s2">&quot;Sous&quot;</span><span class="p">,</span> <span class="s2">&quot;Derrière&quot;</span><span class="p">,</span> <span class="s2">&quot;Environ&quot;</span><span class="p">,</span> <span class="s2">&quot;Remarque&quot;</span><span class="p">,</span> <span class="s2">&quot;Malgré&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;Cacher&quot;</span><span class="p">,</span> <span class="s2">&quot;Demander&quot;</span><span class="p">,</span> <span class="s2">&quot;Prés&quot;</span><span class="p">,</span> <span class="s2">&quot;Enfin&quot;</span><span class="p">,</span> <span class="s2">&quot;Ailleurs&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;Toujours&quot;</span><span class="p">,</span> <span class="s2">&quot;Encore&quot;</span><span class="p">,</span> <span class="s2">&quot;Ainsi&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Parmi&quot;</span><span class="p">,</span> <span class="s2">&quot;Chez&quot;</span><span class="p">,</span> <span class="s2">&quot;Entre(fr)&quot;</span><span class="p">],</span> <span class="s2">&quot;Seul&quot;</span><span class="p">,</span> <span class="s2">&quot;Solei&quot;</span><span class="p">,</span>
+                          <span class="p">[</span><span class="s2">&quot;Sol(fr)&quot;</span><span class="p">,</span> <span class="s2">&quot;Plancher&quot;</span><span class="p">],</span> <span class="s2">&quot;Depuis&quot;</span><span class="p">,</span> <span class="s2">&quot;Ment&quot;</span><span class="p">,</span> <span class="s2">&quot;Enfuit&quot;</span><span class="p">,</span> <span class="s2">&quot;Partout&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;Ensuite&quot;</span><span class="p">,</span> <span class="s2">&quot;Dehors&quot;</span><span class="p">,</span> <span class="s2">&quot;Dois&quot;</span><span class="p">,</span> <span class="s2">&quot;Devoir&quot;</span><span class="p">,</span> <span class="s2">&quot;Rêve&quot;</span><span class="p">,</span> <span class="s2">&quot;Laisse&quot;</span><span class="p">,</span> <span class="s2">&quot;Vider&quot;</span><span class="p">,</span> <span class="s2">&quot;Goûter&quot;</span><span class="p">,</span> <span class="s2">&quot;Déjà&quot;</span><span class="p">,</span> <span class="s2">&quot;Parfois&quot;</span><span class="p">,</span> <span class="s2">&quot;Soif&quot;</span><span class="p">,</span> <span class="s2">&quot;Jamais&quot;</span><span class="p">,</span> <span class="s2">&quot;Essayer&quot;</span><span class="p">,</span> 
+                            <span class="p">[</span><span class="s2">&quot;Laid&quot;</span><span class="p">,</span> <span class="s2">&quot;Moche&quot;</span><span class="p">],</span> <span class="s2">&quot;Avais&quot;</span><span class="p">,</span> <span class="s2">&quot;Goût&quot;</span><span class="p">,</span> <span class="s2">&quot;Car&quot;</span><span class="p">,</span> <span class="s2">&quot;Sentir(fr)&quot;</span><span class="p">,</span> <span class="s2">&quot;Morceaux&quot;</span><span class="p">,</span> <span class="s2">&quot;Tôt&quot;</span><span class="p">,</span> <span class="s2">&quot;Branche&quot;</span><span class="p">,</span> <span class="s2">&quot;Longtemps&quot;</span><span class="p">,</span> <span class="s2">&quot;Bientôt&quot;</span><span class="p">,</span> <span class="s2">&quot;Tellement&quot;</span><span class="p">,</span> <span class="s2">&quot;Notamment&quot;</span><span class="p">,</span>
+                            <span class="p">[</span><span class="s2">&quot;Plus&quot;</span><span class="p">,</span> <span class="s2">&quot;Davantage&quot;</span><span class="p">],</span> <span class="s2">&quot;Combien&quot;</span><span class="p">,</span> <span class="s2">&quot;Particulièrement&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Presque&quot;</span><span class="p">,</span> <span class="s2">&quot;Quasiment&quot;</span><span class="p">],</span> <span class="s2">&quot;Souvent&quot;</span><span class="p">,</span> <span class="s2">&quot;Métier&quot;</span><span class="p">,</span> <span class="s2">&quot;Ennuie&quot;</span><span class="p">,</span> <span class="s2">&quot;Fortement&quot;</span><span class="p">,</span> <span class="s2">&quot;Malheureusement&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;Promener&quot;</span><span class="p">,</span> <span class="s2">&quot;Tiers&quot;</span><span class="p">,</span> <span class="s2">&quot;Repos&quot;</span><span class="p">,</span> <span class="s2">&quot;Melánge&quot;</span><span class="p">,</span> <span class="s2">&quot;Réseau&quot;</span><span class="p">,</span> <span class="s2">&quot;Parent&quot;</span><span class="p">,</span> <span class="s2">&quot;Haut&quot;</span><span class="p">]</span>
+
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">archive2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lejos&quot;</span><span class="p">,</span> <span class="s2">&quot;Largo&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Gustar&quot;</span><span class="p">,</span> <span class="s2">&quot;Amar&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Desear&quot;</span><span class="p">,</span> <span class="s2">&quot;Querer&quot;</span><span class="p">],</span> <span class="s2">&quot;Quien&quot;</span><span class="p">,</span> <span class="s2">&quot;Hacia&quot;</span><span class="p">,</span>
+                          <span class="p">[</span><span class="s2">&quot;Encima&quot;</span><span class="p">,</span> <span class="s2">&quot;Sobre&quot;</span><span class="p">],</span> <span class="s2">&quot;Rápido&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Después&quot;</span><span class="p">,</span> <span class="s2">&quot;Luego&quot;</span><span class="p">,</span> <span class="s2">&quot;Seguidamente&quot;</span><span class="p">],</span>
+                            <span class="s2">&quot;Abajo&quot;</span><span class="p">,</span> <span class="s2">&quot;Detrás&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Aproximadamente&quot;</span><span class="p">,</span> <span class="s2">&quot;Alrededor de&quot;</span><span class="p">],</span>
+                            <span class="s2">&quot;Fijarse&quot;</span><span class="p">,</span> <span class="s2">&quot;A pesar de&quot;</span><span class="p">,</span> <span class="s2">&quot;Esconder&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Preguntar&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedir&quot;</span><span class="p">],</span> <span class="s2">&quot;Cerca&quot;</span><span class="p">,</span>
+                            <span class="p">[</span><span class="s2">&quot;Finalmente&quot;</span><span class="p">,</span> <span class="s2">&quot;Porfin&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;En otra parte&quot;</span><span class="p">,</span> <span class="s2">&quot;En otro lado&quot;</span><span class="p">],</span> <span class="s2">&quot;Siempre&quot;</span><span class="p">,</span>
+                            <span class="p">[</span><span class="s2">&quot;Aún&quot;</span><span class="p">,</span> <span class="s2">&quot;Todavía&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Asi que&quot;</span><span class="p">,</span> <span class="s2">&quot;De este modo&quot;</span><span class="p">,</span> <span class="s2">&quot;De tal forma&quot;</span><span class="p">,</span> <span class="s2">&quot;De esta manera&quot;</span><span class="p">],</span> <span class="s2">&quot;Entre(es)&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;Sólo&quot;</span><span class="p">,</span> <span class="s2">&quot;Sol(es)&quot;</span><span class="p">,</span> <span class="s2">&quot;Suelo&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Hace&quot;</span><span class="p">,</span> <span class="s2">&quot;Desde&quot;</span><span class="p">],</span> <span class="s2">&quot;Miente&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Huir&quot;</span><span class="p">,</span> <span class="s2">&quot;Fugarse&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;En todos lados&quot;</span><span class="p">,</span> <span class="s2">&quot;En todas partes&quot;</span><span class="p">],</span> 
+                              <span class="p">[</span><span class="s2">&quot;Entonces&quot;</span><span class="p">,</span> <span class="s2">&quot;Próximamente&quot;</span><span class="p">,</span> <span class="s2">&quot;A continuación&quot;</span><span class="p">],</span> <span class="s2">&quot;Afuera&quot;</span><span class="p">,</span> <span class="s2">&quot;Debo&quot;</span><span class="p">,</span> <span class="s2">&quot;Deber&quot;</span><span class="p">,</span> <span class="s2">&quot;Soñar&quot;</span><span class="p">,</span> <span class="s2">&quot;Dejar solo&quot;</span><span class="p">,</span> <span class="s2">&quot;Vaciar&quot;</span><span class="p">,</span> 
+                            <span class="s2">&quot;Probar&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Ya&quot;</span><span class="p">,</span> <span class="s2">&quot;Ahora&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;A veces&quot;</span><span class="p">,</span> <span class="s2">&quot;De vez en cuando&quot;</span><span class="p">],</span> <span class="s2">&quot;Sed&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Nunca&quot;</span><span class="p">,</span> <span class="s2">&quot;Jamás&quot;</span><span class="p">],</span> <span class="s2">&quot;Intentar&quot;</span><span class="p">,</span> <span class="s2">&quot;Feo&quot;</span><span class="p">,</span> <span class="s2">&quot;Había&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Sabor&quot;</span><span class="p">,</span> <span class="s2">&quot;Gusto&quot;</span><span class="p">],</span> <span class="s2">&quot;Ya que&quot;</span><span class="p">,</span> <span class="s2">&quot;Oler&quot;</span><span class="p">,</span> 
+                            <span class="p">[</span><span class="s2">&quot;Trozos&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedazos&quot;</span><span class="p">,</span> <span class="s2">&quot;Pieza&quot;</span><span class="p">],</span> <span class="s2">&quot;Temprano&quot;</span><span class="p">,</span> <span class="s2">&quot;Enchufar&quot;</span><span class="p">,</span> <span class="s2">&quot;Mucho tiempo&quot;</span><span class="p">,</span> <span class="s2">&quot;Pronto&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Tan&quot;</span><span class="p">,</span> <span class="s2">&quot;Tanto&quot;</span><span class="p">,</span> <span class="s2">&quot;Tanta&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Especialmente&quot;</span><span class="p">,</span> <span class="s2">&quot;Particularmente&quot;</span><span class="p">],</span>
+                            <span class="s2">&quot;Más&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Cuántos&quot;</span><span class="p">,</span> <span class="s2">&quot;Cuántas&quot;</span><span class="p">,</span> <span class="s2">&quot;Cuánto&quot;</span><span class="p">],</span> <span class="s2">&quot;Particularmente&quot;</span><span class="p">,</span> <span class="s2">&quot;Casi&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;A menudo&quot;</span><span class="p">,</span> <span class="s2">&quot;Frequentemente&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Oficio&quot;</span><span class="p">,</span> <span class="s2">&quot;Trabajo&quot;</span><span class="p">],</span> <span class="s2">&quot;Aburrido&quot;</span><span class="p">,</span>
+                            <span class="p">[</span><span class="s2">&quot;Sumamente&quot;</span><span class="p">,</span> <span class="s2">&quot;Mucho&quot;</span><span class="p">,</span> <span class="s2">&quot;Con fuerza&quot;</span><span class="p">],</span> <span class="s2">&quot;Desgraciadamente&quot;</span><span class="p">,</span> <span class="s2">&quot;Pasear&quot;</span><span class="p">,</span> <span class="s2">&quot;Tercio&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Descanso&quot;</span><span class="p">,</span> <span class="s2">&quot;Calmado&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Mezclar&quot;</span><span class="p">,</span> <span class="s2">&quot;Mezcla&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="s2">&quot;Network&quot;</span><span class="p">],</span> <span class="s2">&quot;Pariente&quot;</span><span class="p">,</span>
+                             <span class="p">[</span><span class="s2">&quot;Alto&quot;</span><span class="p">,</span> <span class="s2">&quot;Elevado&quot;</span><span class="p">,</span> <span class="s2">&quot;Arriba&quot;</span><span class="p">]]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;window&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;delete-event&quot;</span><span class="p">,</span> <span class="n">Gtk</span><span class="o">.</span><span class="n">main_quit</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hscore</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1">#self.label.connect(&quot;shown&quot;, self.wordgenerator)</span>
+        <span class="c1">#print(self.label.get_text())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wordgenerator</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">switch</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;answer&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">switch</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;notify::active&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">answertrigger</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">txtbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;textinput&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">txtbox</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;key-press-event&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">keypress</span><span class="p">)</span>
+        <span class="c1">#self.label.set_text(srt(archive[random.randint(1, 2)] + &quot;[&quot; + random.randint(0, len(archive1) + &quot;]&quot;)))</span>
+        <span class="c1">#self.window.show_all()            self.answertrigger(self, self.switch)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">link</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;linkyg&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;button-press-event&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">setlink</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;rcrd&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">toprecord</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;hscore&quot;</span><span class="p">)</span>
+<span class="c1">#If the switch is pressed changes the list to look into and updates the word shown to the one</span>
+<span class="c1">#from the opposite list.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">answertrigger</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="k">pass</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">switch</span><span class="o">.</span><span class="n">get_active</span><span class="p">()</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;rcrd&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s2">&quot;Record: 0&quot;</span><span class="p">)</span>
+        <span class="n">GLib</span><span class="o">.</span><span class="n">timeout_add</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">resize</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">failmade</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">override_color</span><span class="p">(</span><span class="n">Gtk</span><span class="o">.</span><span class="n">StateFlags</span><span class="o">.</span><span class="n">NORMAL</span><span class="p">,</span> <span class="n">Gdk</span><span class="o">.</span><span class="n">RGBA</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">)</span>
+        <span class="n">auxlabel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="n">auxlabel</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">successmade</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">override_color</span><span class="p">(</span><span class="n">Gtk</span><span class="o">.</span><span class="n">StateFlags</span><span class="o">.</span><span class="n">NORMAL</span><span class="p">,</span> <span class="n">Gdk</span><span class="o">.</span><span class="n">RGBA</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">),</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">)</span>
+        <span class="n">auxlabel</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="n">auxlabel</span><span class="p">)</span>
+    <span class="c1">#This function makes sure the window goes back to good conditions after an element exceeds it&#39;s size.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">resize</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;window&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;rcrd&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">link</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;linkyg&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="o">.</span><span class="n">queue_draw</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span><span class="o">.</span><span class="n">queue_draw</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">queue_draw</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">queue_draw</span><span class="p">()</span>
+        <span class="n">old_window_width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">get_size</span><span class="p">()</span><span class="o">.</span><span class="n">width</span>
+        <span class="n">elementswidth</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">get_allocation</span><span class="p">()</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="o">.</span><span class="n">get_allocation</span><span class="p">()</span><span class="o">.</span><span class="n">width</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span><span class="o">.</span><span class="n">get_allocation</span><span class="p">()</span><span class="o">.</span><span class="n">width</span>
+        <span class="n">labelsize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">get_allocation</span><span class="p">()</span><span class="o">.</span><span class="n">width</span>
+        <span class="n">linksize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="o">.</span><span class="n">get_allocation</span><span class="p">()</span><span class="o">.</span><span class="n">width</span>
+        <span class="n">recordsize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span><span class="o">.</span><span class="n">get_allocation</span><span class="p">()</span><span class="o">.</span><span class="n">width</span>
+        <span class="n">screendata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">get_screen</span><span class="p">()</span>
+        <span class="n">screen_width</span> <span class="o">=</span> <span class="n">screendata</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span>
+        <span class="n">screen_height</span> <span class="o">=</span> <span class="n">screendata</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">elementswidth</span><span class="p">,</span> <span class="mi">140</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;window&quot;</span><span class="p">)</span>
+        <span class="n">new_window_width</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">get_size</span><span class="p">()</span><span class="o">.</span><span class="n">width</span>
+        <span class="k">if</span> <span class="n">new_window_width</span> <span class="o">&gt;</span> <span class="n">old_window_width</span><span class="p">:</span>
+
+            <span class="n">window_height</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">get_size</span><span class="p">()</span><span class="o">.</span><span class="n">height</span>
+            <span class="n">new_x_decrease</span> <span class="o">=</span> <span class="p">(</span><span class="n">new_window_width</span> <span class="o">-</span> <span class="n">old_window_width</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+            <span class="n">x_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span><span class="o">.</span><span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">new_x_pos</span><span class="p">,</span> <span class="n">new_y_pos</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+        <span class="c1">#if windowsize &lt; (labelsize+linksize+recordsize) or windowsize &gt; (labelsize+linksize+recordsize):</span>
+            <span class="c1">#self.window = self.window.resize(labelsize+linksize+recordsize, 100)</span>
+        <span class="k">pass</span>
+
+<span class="c1">#Called on first run or after an answer is given shows a new word randomly to guess.</span>
+<span class="c1">#Also fills variables who holds the index of the list and their counterpart in the other one.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wordgenerator</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Makes sure there&#39;s going to be in a black color (needs conditional)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">override_color</span><span class="p">(</span><span class="n">Gtk</span><span class="o">.</span><span class="n">StateFlags</span><span class="o">.</span><span class="n">NORMAL</span><span class="p">,</span> <span class="n">Gdk</span><span class="o">.</span><span class="n">RGBA</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;word&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;self.&quot;</span> <span class="o">+</span> <span class="s2">&quot;archive&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">archive1</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="c1">#antagonist holds the actual elements from the list while pointer is a string with</span>
+            <span class="c1">#the name of the variable who can be invoked with eval.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">),</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">),</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">+</span><span class="s2">&quot;[&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span><span class="o">+</span><span class="s2">&quot;]&quot;</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="c1">#To detect if has the (fr) (es) tag and scrap it.</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;)&quot;</span><span class="p">:</span>
+                <span class="n">postcut</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">[</span><span class="n">postcut</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">element</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;)&quot;</span><span class="p">:</span>
+                    <span class="n">postcut</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">element</span><span class="p">)]</span> <span class="o">=</span> <span class="n">element</span><span class="p">[</span><span class="n">postcut</span><span class="p">]</span>
+        <span class="n">GLib</span><span class="o">.</span><span class="n">timeout_add</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">resize</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">])</span>
+<span class="c1">#Runs on every keypress but is mainly used to looking for an enter keypress an check is it&#39;s</span>
+<span class="c1">#true or false, also updates the record.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">keypress</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">string</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">switch</span><span class="o">.</span><span class="n">get_active</span><span class="p">()</span> <span class="o">==</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">txtbox</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">txtbox</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+
+                    <span class="c1">#self.label = self.label.override_color(Gtk.StateFlags.NORMAL, Gdk.RGBA(0, 0, 0, 0))</span>
+                    <span class="c1">#self.label = self.builder.get_object(&quot;word&quot;)</span>
+                    <span class="c1">#auxlabel = self.label.get_text()</span>
+                    <span class="c1">#self.label = self.label.set_text(auxlabel)</span>
+                    <span class="n">GLib</span><span class="o">.</span><span class="n">timeout_add</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">successmade</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">wordgenerator</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">recordupdate</span><span class="p">()</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+                    <span class="n">GLib</span><span class="o">.</span><span class="n">timeout_add</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">failmade</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">recordupdate</span><span class="p">()</span>
+<span class="c1">#If there&#39;s more than one translation is a list, so it searchs inside it.</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">auxrecord</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span>
+                <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+                        <span class="n">GLib</span><span class="o">.</span><span class="n">timeout_add</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">successmade</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">wordgenerator</span><span class="p">()</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">recordupdate</span><span class="p">()</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auxrecord</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+                    <span class="n">GLib</span><span class="o">.</span><span class="n">timeout_add</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">failmade</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">recordupdate</span><span class="p">()</span>
+            <span class="c1">#This conditions are the given ones in case a wrong answers is given and enter is pressed two times.</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">switch</span><span class="o">.</span><span class="n">get_active</span><span class="p">()</span> <span class="o">==</span> <span class="kc">True</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">switch</span><span class="o">.</span><span class="n">set_active</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1">#Function who recieves a feedback of the result of the answer and acts on it.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">recordupdate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;rcrd&quot;</span><span class="p">)</span>
+        <span class="c1">#Since it starts from 0 it needs a push because record += record don&#39;t works with 0.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s2">&quot;Record: 1 &quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="c1">#Minus one is a way of telling the function there was a mistake.</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s2">&quot;Combo break!&quot;</span><span class="p">)</span>
+            <span class="c1">#Once a mistake is made the answer is atomatically given since it&#39;s expected the user wants it.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">switch</span><span class="o">.</span><span class="n">set_active</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+            <span class="c1">#self.txtbox = self.builder.get_object(&quot;textinput&quot;)</span>
+        <span class="c1">#This else assumes there were no mistakes made and register the increments</span>
+        <span class="c1">#The increments are registered by the function keypress in case of a right answer is given.</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">recordtxtbox</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Record: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="c1">#Here the top score is recorded if it applies.</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hscore</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">toprecord</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">builder</span><span class="o">.</span><span class="n">get_object</span><span class="p">(</span><span class="s2">&quot;hscore&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">toprecord</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">toprecord</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s2">&quot;Top: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">hscore</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span>
+<span class="c1">#Function who changes the link to the webpage of youglish with the pronunciation.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setlink</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">widget</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="c1">#If the word shown in the program is in french the pointer stays the same.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">),</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="o">.</span><span class="n">set_uri</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://youglish.com/pronounce/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot;/french?&quot;</span><span class="p">)</span>
+            <span class="c1">#If there&#39;s more than one word the link is completed with one of them randomly.</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">),</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="o">.</span><span class="n">set_uri</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://youglish.com/pronounce/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">+</span><span class="s2">&quot;[&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot;]&quot;</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot;/french?&quot;</span><span class="p">)</span>
+        <span class="c1">#If the pointer is in a spanish word is redirected to the french list.</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="o">.</span><span class="n">set_uri</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://youglish.com/pronounce/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;1&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">13</span><span class="p">:</span> <span class="p">]))</span><span class="o">+</span><span class="s2">&quot;/french?&quot;</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="o">.</span><span class="n">set_uri</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://youglish.com/pronounce/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span><span class="o">+</span><span class="s2">&quot;/french?&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">link</span><span class="o">.</span><span class="n">set_markup</span><span class="p">(</span><span class="s2">&quot;Youglish&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Main</span><span class="p">()</span>
+    <span class="n">Gtk</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+    
+</pre></div></td></tr></table></div>
             <h2>Tkinter based lenguage learning tool.</h2>
             <p>There was a point where I needed more flexibility in terms of how many platforms I could run an UI at, and also found challenging to reasemble a program into another library's logic, that's where I get familiar with tkinter and also expand the functionalities of the UI, including quizing by images or search a word's pronunciation online in one click.</p>
+            <button type="button" class="collapsible">Check code</button>
+            <div class="content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span></pre></div></td><td class="code"><div><pre><span></span><span class="ch">#!/usr/bin/env</span>
+<span class="c1">#https://python-gtk-3-tutorial.readthedocs.io/en/latest/index.html</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="kn">import</span> <span class="n">ttk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">webbrowser</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">platform</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pygame</span>
+
+
+<span class="n">gladeFile</span> <span class="o">=</span> <span class="s2">&quot;ui2.glade&quot;</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Main</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">archive1</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Loin&quot;</span><span class="p">,</span> <span class="s2">&quot;Long&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Aime&quot;</span><span class="p">,</span> <span class="s2">&quot;Aimer&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Désirer&quot;</span><span class="p">,</span> <span class="s2">&quot;Veux&quot;</span><span class="p">],</span> <span class="s2">&quot;Qui&quot;</span><span class="p">,</span> <span class="s2">&quot;Vers&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;Dessus&quot;</span><span class="p">,</span> <span class="s2">&quot;Vite&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Puis&quot;</span><span class="p">,</span> <span class="s2">&quot;Après&quot;</span><span class="p">],</span> <span class="s2">&quot;Sous&quot;</span><span class="p">,</span> <span class="s2">&quot;Derrière&quot;</span><span class="p">,</span> <span class="s2">&quot;Environ&quot;</span><span class="p">,</span> <span class="s2">&quot;Remarque&quot;</span><span class="p">,</span> <span class="s2">&quot;Malgré&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;Cacher&quot;</span><span class="p">,</span> <span class="s2">&quot;Demander&quot;</span><span class="p">,</span> <span class="s2">&quot;Prés&quot;</span><span class="p">,</span> <span class="s2">&quot;Enfin&quot;</span><span class="p">,</span> <span class="s2">&quot;Ailleurs&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;Toujours&quot;</span><span class="p">,</span> <span class="s2">&quot;Encore&quot;</span><span class="p">,</span> <span class="s2">&quot;Ainsi&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Parmi&quot;</span><span class="p">,</span> <span class="s2">&quot;Chez&quot;</span><span class="p">,</span> <span class="s2">&quot;Entre(fr)&quot;</span><span class="p">],</span> <span class="s2">&quot;Seul&quot;</span><span class="p">,</span> <span class="s2">&quot;Solei&quot;</span><span class="p">,</span>
+                          <span class="p">[</span><span class="s2">&quot;Sol(fr)&quot;</span><span class="p">,</span> <span class="s2">&quot;Plancher&quot;</span><span class="p">],</span> <span class="s2">&quot;Depuis&quot;</span><span class="p">,</span> <span class="s2">&quot;Ment&quot;</span><span class="p">,</span> <span class="s2">&quot;Enfuit&quot;</span><span class="p">,</span> <span class="s2">&quot;Partout&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;Ensuite&quot;</span><span class="p">,</span> <span class="s2">&quot;Dehors&quot;</span><span class="p">,</span> <span class="s2">&quot;Dois&quot;</span><span class="p">,</span> <span class="s2">&quot;Devoir&quot;</span><span class="p">,</span> <span class="s2">&quot;Rêve&quot;</span><span class="p">,</span> <span class="s2">&quot;Laisse&quot;</span><span class="p">,</span> <span class="s2">&quot;Vider&quot;</span><span class="p">,</span> <span class="s2">&quot;Goûter&quot;</span><span class="p">,</span> <span class="s2">&quot;Déjà&quot;</span><span class="p">,</span> <span class="s2">&quot;Parfois&quot;</span><span class="p">,</span> <span class="s2">&quot;Soif&quot;</span><span class="p">,</span> <span class="s2">&quot;Jamais&quot;</span><span class="p">,</span> <span class="s2">&quot;Essayer&quot;</span><span class="p">,</span> 
+                            <span class="p">[</span><span class="s2">&quot;Laid&quot;</span><span class="p">,</span> <span class="s2">&quot;Moche&quot;</span><span class="p">],</span> <span class="s2">&quot;Avais&quot;</span><span class="p">,</span> <span class="s2">&quot;Goût&quot;</span><span class="p">,</span> <span class="s2">&quot;Car&quot;</span><span class="p">,</span> <span class="s2">&quot;Sentir(fr)&quot;</span><span class="p">,</span> <span class="s2">&quot;Morceaux&quot;</span><span class="p">,</span> <span class="s2">&quot;Tôt&quot;</span><span class="p">,</span> <span class="s2">&quot;Branche&quot;</span><span class="p">,</span> <span class="s2">&quot;Longtemps&quot;</span><span class="p">,</span> <span class="s2">&quot;Bientôt&quot;</span><span class="p">,</span> <span class="s2">&quot;Tellement&quot;</span><span class="p">,</span> <span class="s2">&quot;Notamment&quot;</span><span class="p">,</span>
+                            <span class="p">[</span><span class="s2">&quot;Plus&quot;</span><span class="p">,</span> <span class="s2">&quot;Davantage&quot;</span><span class="p">],</span> <span class="s2">&quot;Combien&quot;</span><span class="p">,</span> <span class="s2">&quot;Particulièrement&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Presque&quot;</span><span class="p">,</span> <span class="s2">&quot;Quasiment&quot;</span><span class="p">],</span> <span class="s2">&quot;Souvent&quot;</span><span class="p">,</span> <span class="s2">&quot;Métier&quot;</span><span class="p">,</span> <span class="s2">&quot;Ennuie&quot;</span><span class="p">,</span> <span class="s2">&quot;Fortement&quot;</span><span class="p">,</span> <span class="s2">&quot;Malheureusement&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;Promener&quot;</span><span class="p">,</span> <span class="s2">&quot;Tiers&quot;</span><span class="p">,</span> <span class="s2">&quot;Repos&quot;</span><span class="p">,</span> <span class="s2">&quot;Melánge&quot;</span><span class="p">,</span> <span class="s2">&quot;Réseau&quot;</span><span class="p">,</span> <span class="s2">&quot;Parent&quot;</span><span class="p">,</span> <span class="s2">&quot;Haut&quot;</span><span class="p">,</span> <span class="s2">&quot;Cadeau&quot;</span><span class="p">,</span> <span class="s2">&quot;Poudre&quot;</span><span class="p">,</span> <span class="s2">&quot;Désormais&quot;</span><span class="p">,</span> <span class="s2">&quot;Coin&quot;</span><span class="p">,</span> <span class="s2">&quot;Comprend&quot;</span><span class="p">,</span> <span class="s2">&quot;Genoux&quot;</span><span class="p">,</span> <span class="s2">&quot;Bâtiment&quot;</span><span class="p">]</span>
+
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">archive2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Lejos&quot;</span><span class="p">,</span> <span class="s2">&quot;Largo&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Gustar&quot;</span><span class="p">,</span> <span class="s2">&quot;Amar&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Desear&quot;</span><span class="p">,</span> <span class="s2">&quot;Querer&quot;</span><span class="p">],</span> <span class="s2">&quot;Quien&quot;</span><span class="p">,</span> <span class="s2">&quot;Hacia&quot;</span><span class="p">,</span>
+                          <span class="p">[</span><span class="s2">&quot;Encima&quot;</span><span class="p">,</span> <span class="s2">&quot;Sobre&quot;</span><span class="p">],</span> <span class="s2">&quot;Rápido&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Después&quot;</span><span class="p">,</span> <span class="s2">&quot;Luego&quot;</span><span class="p">,</span> <span class="s2">&quot;Seguidamente&quot;</span><span class="p">],</span>
+                            <span class="s2">&quot;Abajo&quot;</span><span class="p">,</span> <span class="s2">&quot;Detrás&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Aproximadamente&quot;</span><span class="p">,</span> <span class="s2">&quot;Alrededor de&quot;</span><span class="p">],</span>
+                            <span class="s2">&quot;Fijarse&quot;</span><span class="p">,</span> <span class="s2">&quot;A pesar de&quot;</span><span class="p">,</span> <span class="s2">&quot;Esconder&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Preguntar&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedir&quot;</span><span class="p">],</span> <span class="s2">&quot;Cerca&quot;</span><span class="p">,</span>
+                            <span class="p">[</span><span class="s2">&quot;Finalmente&quot;</span><span class="p">,</span> <span class="s2">&quot;Porfin&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;En otra parte&quot;</span><span class="p">,</span> <span class="s2">&quot;En otro lado&quot;</span><span class="p">],</span> <span class="s2">&quot;Siempre&quot;</span><span class="p">,</span>
+                            <span class="p">[</span><span class="s2">&quot;Aún&quot;</span><span class="p">,</span> <span class="s2">&quot;Todavía&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Asi que&quot;</span><span class="p">,</span> <span class="s2">&quot;De este modo&quot;</span><span class="p">,</span> <span class="s2">&quot;De tal forma&quot;</span><span class="p">,</span> <span class="s2">&quot;De esta manera&quot;</span><span class="p">],</span> <span class="s2">&quot;Entre(es)&quot;</span><span class="p">,</span>
+                            <span class="p">[</span><span class="s2">&quot;Sólo&quot;</span><span class="p">,</span> <span class="s2">&quot;Solo&quot;</span><span class="p">],</span> <span class="s2">&quot;Sol(es)&quot;</span><span class="p">,</span> <span class="s2">&quot;Suelo&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Hace (C.C. de tiempo)&quot;</span><span class="p">,</span> <span class="s2">&quot;Desde&quot;</span><span class="p">],</span> <span class="s2">&quot;Miente&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Huir&quot;</span><span class="p">,</span> <span class="s2">&quot;Fugarse&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;En todos lados&quot;</span><span class="p">,</span> <span class="s2">&quot;En todas partes&quot;</span><span class="p">],</span> 
+                              <span class="p">[</span><span class="s2">&quot;Entonces&quot;</span><span class="p">,</span> <span class="s2">&quot;Próximamente&quot;</span><span class="p">,</span> <span class="s2">&quot;A continuación&quot;</span><span class="p">],</span> <span class="s2">&quot;Afuera&quot;</span><span class="p">,</span> <span class="s2">&quot;Debo&quot;</span><span class="p">,</span> <span class="s2">&quot;Deber&quot;</span><span class="p">,</span> <span class="s2">&quot;Soñar&quot;</span><span class="p">,</span> <span class="s2">&quot;Dejar solo&quot;</span><span class="p">,</span> <span class="s2">&quot;Vaciar&quot;</span><span class="p">,</span> 
+                            <span class="s2">&quot;Probar&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Ya&quot;</span><span class="p">,</span> <span class="s2">&quot;Ahora&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;A veces&quot;</span><span class="p">,</span> <span class="s2">&quot;De vez en cuando&quot;</span><span class="p">],</span> <span class="s2">&quot;Sed&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Nunca&quot;</span><span class="p">,</span> <span class="s2">&quot;Jamás&quot;</span><span class="p">],</span> <span class="s2">&quot;Intentar&quot;</span><span class="p">,</span> <span class="s2">&quot;Feo&quot;</span><span class="p">,</span> <span class="s2">&quot;Había&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Sabor&quot;</span><span class="p">,</span> <span class="s2">&quot;Gusto&quot;</span><span class="p">],</span> <span class="s2">&quot;Ya que&quot;</span><span class="p">,</span> <span class="s2">&quot;Oler&quot;</span><span class="p">,</span> 
+                            <span class="p">[</span><span class="s2">&quot;Trozos&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedazos&quot;</span><span class="p">,</span> <span class="s2">&quot;Pieza&quot;</span><span class="p">],</span> <span class="s2">&quot;Temprano&quot;</span><span class="p">,</span> <span class="s2">&quot;Enchufar&quot;</span><span class="p">,</span> <span class="s2">&quot;Mucho tiempo&quot;</span><span class="p">,</span> <span class="s2">&quot;Pronto&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Tan&quot;</span><span class="p">,</span> <span class="s2">&quot;Tanto&quot;</span><span class="p">,</span> <span class="s2">&quot;Tanta&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Especialmente&quot;</span><span class="p">,</span> <span class="s2">&quot;Particularmente&quot;</span><span class="p">],</span>
+                            <span class="p">[</span><span class="s2">&quot;Más&quot;</span><span class="p">,</span> <span class="s2">&quot;Extra&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Cuántos&quot;</span><span class="p">,</span> <span class="s2">&quot;Cuántas&quot;</span><span class="p">,</span> <span class="s2">&quot;Cuánto&quot;</span><span class="p">],</span> <span class="s2">&quot;Particularmente&quot;</span><span class="p">,</span> <span class="s2">&quot;Casi&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;A menudo&quot;</span><span class="p">,</span> <span class="s2">&quot;Frequentemente&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Oficio&quot;</span><span class="p">,</span> <span class="s2">&quot;Trabajo&quot;</span><span class="p">],</span> <span class="s2">&quot;Aburrido&quot;</span><span class="p">,</span>
+                            <span class="p">[</span><span class="s2">&quot;Sumamente&quot;</span><span class="p">,</span> <span class="s2">&quot;Con fuerza&quot;</span><span class="p">,</span> <span class="s2">&quot;Fuertemente&quot;</span><span class="p">],</span> <span class="s2">&quot;Desgraciadamente&quot;</span><span class="p">,</span> <span class="s2">&quot;Pasear&quot;</span><span class="p">,</span> <span class="s2">&quot;Tercio&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Descanso&quot;</span><span class="p">,</span> <span class="s2">&quot;Calmado&quot;</span><span class="p">,</span> <span class="s2">&quot;Descansar&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Mezclar&quot;</span><span class="p">,</span> <span class="s2">&quot;Mezcla&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="s2">&quot;Network&quot;</span><span class="p">],</span> <span class="s2">&quot;Pariente&quot;</span><span class="p">,</span>
+                             <span class="p">[</span><span class="s2">&quot;Con altura&quot;</span><span class="p">,</span> <span class="s2">&quot;Elevado&quot;</span><span class="p">,</span> <span class="s2">&quot;Arriba&quot;</span><span class="p">],</span> <span class="s2">&quot;Regalo&quot;</span><span class="p">,</span> <span class="s2">&quot;Polvo&quot;</span><span class="p">,</span> <span class="s2">&quot;A partir de ahora&quot;</span><span class="p">,</span> <span class="s2">&quot;Esquina&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Incluye&quot;</span><span class="p">,</span> <span class="s2">&quot;Entiende&quot;</span><span class="p">],</span> <span class="s2">&quot;Rodillas&quot;</span><span class="p">,</span> <span class="s2">&quot;Edificio&quot;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hscore</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="c1">#self.label.connect(&quot;shown&quot;, self.wordgenerator)</span>
+        <span class="c1">#print(self.label.get_text())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">windowconstructortkinter</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">wordgenerator</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+        <span class="c1">#self.label.set_text(srt(archive[random.randint(1, 2)] + &quot;[&quot; + random.randint(0, len(archive1) + &quot;]&quot;)))</span>
+        <span class="c1">#self.window.show_all()            self.answertrigger(self, self.switch)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">callback</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+        <span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+<span class="c1">#If the switch is pressed changes the list to look into and updates the word shown to the one</span>
+<span class="c1">#from the opposite list.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">windowconstructortkinter</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">minsize</span><span class="p">(</span><span class="mi">790</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+        <span class="n">windowcolor</span> <span class="o">=</span> <span class="s2">&quot;#e4d2ea&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Poppy quizzy&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Windows&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s2">&quot;appico.ico&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">platform</span><span class="o">.</span><span class="n">system</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Linux&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">iconphoto</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">tk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="s2">&quot;appico.png&quot;</span><span class="p">))</span>
+        <span class="c1">#self.window.geometry(&quot;750x200&quot;)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_screenwidth</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_screenheight</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_height</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;+</span><span class="si">%d</span><span class="s2">+</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">windowcolor</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="o">.</span><span class="n">columnconfigure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minsize</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="o">.</span><span class="n">columnconfigure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minsize</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="o">.</span><span class="n">columnconfigure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">minsize</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="o">.</span><span class="n">columnconfigure</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">minsize</span><span class="o">=</span><span class="mi">490</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="o">.</span><span class="n">columnconfigure</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">minsize</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="o">.</span><span class="n">rowconfigure</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="o">.</span><span class="n">rowconfigure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="o">.</span><span class="n">rowconfigure</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="o">.</span><span class="n">rowconfigure</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">word</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;TkDefaultFont&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">background</span><span class="o">=</span><span class="n">windowcolor</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;e&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">recordlbl</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Record: -&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">windowcolor</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">recordlbl</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">youglishlink</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Youglish&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">windowcolor</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">cursor</span><span class="o">=</span><span class="s2">&quot;hand2&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">youglishlink</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">highscore</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Top score: -&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">windowcolor</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">highscore</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">style</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Style</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;Custom.TRadiobutton&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">windowcolor</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">answerbtn</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;See the answer&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">activebackground</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">activeforeground</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">disabledforeground</span><span class="o">=</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;TkDefaultFont&quot;</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span> <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">answertrigger</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">answerbtn</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">textbox</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;TkDefaultFont&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">insertbackground</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;#f4c100&quot;</span><span class="p">,</span> <span class="n">insertwidth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#8c0085&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">textbox</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">S</span><span class="o">+</span><span class="n">tk</span><span class="o">.</span><span class="n">W</span><span class="o">+</span><span class="n">tk</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">textbox</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;KeyPress&gt;&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">keypress</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">selected</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">IntVar</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r1</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Radiobutton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Whole list&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">selected</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;Custom.TRadiobutton&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r2</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Radiobutton</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Last &quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">variable</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">selected</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;Custom.TRadiobutton&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r2aux</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot; words&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="n">windowcolor</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r2entry</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="p">,</span> <span class="n">justify</span><span class="o">=</span><span class="s2">&quot;center&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r2entry</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">W</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r2aux</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">r2entry</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">selected</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mainframe</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">answertrigger</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+        <span class="n">oldwidth</span><span class="p">,</span> <span class="n">oldheight</span><span class="p">,</span> <span class="n">oldx</span><span class="p">,</span> <span class="n">oldy</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_height</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_x</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_y</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">answerbtn</span><span class="o">.</span><span class="n">cget</span><span class="p">(</span><span class="s2">&quot;bg&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;white&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">answerbtn</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;See the original&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">answerbtn</span><span class="o">.</span><span class="n">cget</span><span class="p">(</span><span class="s2">&quot;bg&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;black&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">answerbtn</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;See the answer&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">answerbtn</span><span class="o">.</span><span class="n">cget</span><span class="p">(</span><span class="s2">&quot;bg&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;black&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">update_idletasks</span><span class="p">()</span>
+        <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">()</span> <span class="o">!=</span> <span class="n">oldwidth</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_height</span><span class="p">()</span> <span class="o">!=</span> <span class="n">oldheight</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">oldwidth</span><span class="p">,</span> <span class="n">oldheight</span><span class="p">,</span> <span class="n">oldx</span><span class="p">,</span> <span class="n">oldy</span><span class="p">)</span>
+    <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+    <span class="c1">#This definition is unrelated to tkinter (pygame) and is made to make a sound when an error it&#39;s made.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">playerrorsound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;Oxygen-Window-All-Desktops-Not.ogg&quot;</span><span class="p">)</span>
+        <span class="n">pygame</span><span class="o">.</span><span class="n">mixer</span><span class="o">.</span><span class="n">music</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">loops</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">failmade</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">playerrorsound</span><span class="p">()</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">successmade</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">)</span>
+    <span class="c1">#This function makes sure the window goes back to good conditions after an element exceeds it&#39;s size.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">resize</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">oldwidth</span><span class="p">,</span> <span class="n">oldheight</span><span class="p">,</span> <span class="n">oldx</span><span class="p">,</span> <span class="n">oldy</span><span class="p">):</span>
+        <span class="k">pass</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">oldwidth</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;+</span><span class="si">%d</span><span class="s2">+</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">oldx</span><span class="o">-</span><span class="p">((</span><span class="n">oldwidth</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">()</span><span class="o">/</span><span class="mi">4</span><span class="p">)),</span> <span class="n">oldy</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">oldwidth</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;+</span><span class="si">%d</span><span class="s2">+</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">oldx</span><span class="o">+</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">()</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">oldwidth</span><span class="o">/</span><span class="mi">4</span><span class="p">)),</span> <span class="n">oldy</span><span class="p">))</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">()</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_x</span><span class="p">()</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_screenwidth</span><span class="p">():</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;+</span><span class="si">%d</span><span class="s2">+</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_screenwidth</span><span class="p">()</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">(),</span> <span class="n">oldy</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_x</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;+</span><span class="si">%d</span><span class="s2">+</span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">oldy</span><span class="p">))</span>
+<span class="c1">#Called on first run or after an answer is given shows a new word randomly to guess.</span>
+<span class="c1">#Also fills variables who holds the index of the list and their counterpart in the other one.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">wordgenerator</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">oldwidth</span><span class="p">,</span> <span class="n">oldheight</span><span class="p">,</span> <span class="n">oldx</span><span class="p">,</span> <span class="n">oldy</span><span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_height</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_x</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_y</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;self.&quot;</span> <span class="o">+</span> <span class="s2">&quot;archive&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">archive1</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">selected</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;self.&quot;</span> <span class="o">+</span> <span class="s2">&quot;archive&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;[&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">archive1</span><span class="p">)</span><span class="o">-</span><span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">r2entry</span><span class="o">.</span><span class="n">get</span><span class="p">()),</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">archive1</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="c1">#antagonist holds the actual elements from the list while pointer is a string with</span>
+            <span class="c1">#the name of the variable who can be invoked with eval.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">),</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">update_idletasks</span><span class="p">()</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">()</span> <span class="o">!=</span> <span class="n">oldwidth</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_height</span><span class="p">()</span> <span class="o">!=</span> <span class="n">oldheight</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">oldwidth</span><span class="p">,</span> <span class="n">oldheight</span><span class="p">,</span> <span class="n">oldx</span><span class="p">,</span> <span class="n">oldy</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">),</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">word</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">+</span><span class="s2">&quot;[&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span><span class="o">+</span><span class="s2">&quot;]&quot;</span><span class="p">),</span> <span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;TkDefaultFont&quot;</span><span class="p">,</span> <span class="mi">40</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">update_idletasks</span><span class="p">()</span>
+            <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_width</span><span class="p">()</span> <span class="o">!=</span> <span class="n">oldwidth</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">winfo_height</span><span class="p">()</span> <span class="o">!=</span> <span class="n">oldheight</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">oldwidth</span><span class="p">,</span> <span class="n">oldheight</span><span class="p">,</span> <span class="n">oldx</span><span class="p">,</span> <span class="n">oldy</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="c1">#To detect if has the (fr) (es) tag and scrap it.</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;)&quot;</span><span class="p">:</span>
+                <span class="n">postcut</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">[</span><span class="n">postcut</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">element</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;)&quot;</span><span class="p">:</span>
+                    <span class="n">postcut</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">element</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">element</span><span class="p">)]</span> <span class="o">=</span> <span class="n">element</span><span class="p">[</span><span class="n">postcut</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">setlink</span><span class="p">()</span>
+<span class="c1">#Runs on every keypress but is mainly used to looking for an enter keypress an check is it&#39;s</span>
+<span class="c1">#true or false, also updates the record.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">keypress</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+
+
+        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">char</span> <span class="o">==</span> <span class="s2">&quot;</span><span class="se">\r</span><span class="s2">&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">answerbtn</span><span class="o">.</span><span class="n">cget</span><span class="p">(</span><span class="s2">&quot;bg&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;white&quot;</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">textbox</span><span class="o">.</span><span class="n">get</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">textbox</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;end&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+
+                    <span class="c1">#self.label = self.label.override_color(Gtk.StateFlags.NORMAL, Gdk.RGBA(0, 0, 0, 0))</span>
+                    <span class="c1">#self.label = self.builder.get_object(&quot;word&quot;)</span>
+                    <span class="c1">#auxlabel = self.label.get_text()</span>
+                    <span class="c1">#self.label = self.label.set_text(auxlabel)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">successmade</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">wordgenerator</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">+=</span> <span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">recordupdate</span><span class="p">()</span>
+                <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">failmade</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">recordupdate</span><span class="p">()</span>
+<span class="c1">#If there&#39;s more than one translation is a list, so it searchs inside it.</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">auxrecord</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span>
+                <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">element</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">successmade</span><span class="p">()</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">wordgenerator</span><span class="p">()</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">+=</span> <span class="mi">1</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">recordupdate</span><span class="p">()</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">auxrecord</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">failmade</span><span class="p">()</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">recordupdate</span><span class="p">()</span>
+            <span class="c1">#This conditions are the given ones in case a wrong answers is given and enter is pressed two times.</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">answerbtn</span><span class="o">.</span><span class="n">cget</span><span class="p">(</span><span class="s2">&quot;bg&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;black&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">answerbtn</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">background</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span>
+<span class="c1">#Function who recieves a feedback of the result of the answer and acts on it.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">recordupdate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#Since it starts from 0 it needs a push because record += record don&#39;t works with 0.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">recordlbl</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Record: 1&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="c1">#Minus one is a way of telling the function there was a mistake.</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">recordlbl</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Combo break!&quot;</span><span class="p">)</span>
+            <span class="c1">#Once a mistake is made the answer is atomatically given since it&#39;s expected the user wants it.</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">answertrigger</span><span class="p">()</span>
+            <span class="c1">#self.txtbox = self.builder.get_object(&quot;textinput&quot;)</span>
+        <span class="c1">#This else assumes there were no mistakes made and register the increments</span>
+        <span class="c1">#The increments are registered by the function keypress in case of a right answer is given.</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">recordlbl</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Record: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+            <span class="c1">#Here the top score is recorded if it applies.</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hscore</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">highscore</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Top score: &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">record</span><span class="p">))</span>
+                <span class="c1">#self.toprecord = self.toprecord.set_text(&quot;Top: &quot;+str(self.record))</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">hscore</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">record</span>
+<span class="c1">#Function who changes the link to the webpage of youglish with the pronunciation.</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">setlink</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#If the word shown in the program is in french the pointer stays the same.</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">),</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">youglishlink</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://youglish.com/pronounce/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot;/french?&quot;</span><span class="p">))</span>
+                <span class="c1">#self.link.set_uri(r&quot;https://youglish.com/pronounce/&quot;+str(eval(self.pointer))+&quot;/french?&quot;)</span>
+            <span class="c1">#If there&#39;s more than one word the link is completed with one of them randomly.</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">),</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">youglishlink</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://youglish.com/pronounce/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="o">+</span><span class="s2">&quot;[&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot;]&quot;</span><span class="p">))</span><span class="o">+</span><span class="s2">&quot;/french?&quot;</span><span class="p">))</span>
+                <span class="c1">#self.link.set_uri(r&quot;https://youglish.com/pronounce/&quot;+str(eval(self.pointer+&quot;[&quot;+str(random.randint(0, (len(self.pointer))-1))+&quot;]&quot;))+&quot;/french?&quot;)</span>
+        <span class="c1">#If the pointer is in a spanish word is redirected to the french list.</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">youglishlink</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://youglish.com/pronounce/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;1&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">pointer</span><span class="p">[</span><span class="mi">13</span><span class="p">:</span> <span class="p">]))</span><span class="o">+</span><span class="s2">&quot;/french?&quot;</span><span class="p">))</span>
+                <span class="c1">#self.link.set_uri(r&quot;https://youglish.com/pronounce/&quot;+str(eval(self.pointer[0:12]+&quot;1&quot;+self.pointer[13: ]))+&quot;/french?&quot;)</span>
+            <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">youglishlink</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;https://youglish.com/pronounce/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">antagonist</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span><span class="o">+</span><span class="s2">&quot;/french?&quot;</span><span class="p">))</span>
+                <span class="c1">#self.link.set_uri(r&quot;https://youglish.com/pronounce/&quot;+self.antagonist[random.randint(0, len(self.antagonist)-1)]+&quot;/french?&quot;)</span>
+            <span class="c1">#self.link.set_markup(&quot;Youglish&quot;)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">app</span> <span class="o">=</span> <span class="n">Main</span><span class="p">()</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+    
+</pre></div></td></tr></table></div>
             <h2>Toolset for the creation of image databases, with the pursose of training AI upscaling algorithms.</h2>
             <p>I made a suite of functionalities related to the creation-pruning-renaming-relocation of batches of images, with the finality of increasing the overall quality of a dataset in the most automated way possible, for achieving this, different methodologies are applied, like deletion of photos who are too blurry, deletion of photos who contain certain objects, delete images whose resolution is not divisible by two, etc...</p>
         </div>
@@ -37,6 +1045,22 @@
         </div>
         </div>
         </div>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
     </body>
             <script>
             const maindiv = document.getElementById("mainbod")
@@ -80,4 +1104,5 @@
             };
 
         </script>
+ 
 </html>
