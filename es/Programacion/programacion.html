@@ -491,7 +491,7 @@
 </pre></div></td></tr></table></div>
             <h2>Aplicación de aprendizaje de idiomas basada en Tkinter.</h2>
             <p>Hubo un momento donde necesité más flexibilidad en el sentido de en cuántas plataformas pudiese ejecutar mi interfaz gráfica, y también encontré lúdico el re-escribir un programa ya hecho a la lógica de otra librería, en ese momento es donde me familiarizé con tkinter y también expandí las funcionalidades del programa, incluyendo traducción de conceptos dada una imágen, o la busqueda de la pronunciación de una palabra online dando un click.</p>
-                        <button type="button" class="collapsible">Code check</button>
+                        <button type="button" class="collapsible">Comprobar código</button>
             <div class="content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
 <span class="normal">  2</span>
 <span class="normal">  3</span>
@@ -1033,7 +1033,7 @@
             <h2>Randomizador de dirección MAC para windows.</h2>
             <p>Después de volver desde linux a windows hubo un periodo de tiempo en el que extrañé esta funcionalidad (no ahora, ahora está implementada de manera nativa y mi programa está obsoleto) reforzó mi privacidad en redes públicas y fué una capa de proteción ante las técnicas de seguimiento de los proveedores de internet.</p>
             <p>Con este proyecto aprendí la versatilidad que tiene python para modificar la configuración de un sistema operativo aunque sea un lenguaje de programación de alto nivel.</p>
-                        <button type="button" class="collapsible">Code check</button>
+                        <button type="button" class="collapsible">Comprobar código</button>
             <div class="content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1140,7 +1140,22 @@
         </div>
         </div>
         </div>
+        <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
 
+        for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+            }
+        });
+        }
+        </script>
     </body>
             <script>
             const maindiv = document.getElementById("mainbod")
