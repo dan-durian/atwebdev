@@ -1124,15 +1124,1210 @@
         <div id="csharp">
             <h1>C# projects.</h1>
             <h2>Windows forms latency analizer.</h2>
+            <img src="../../resources/pinger.png" alt="Program image">
             <p>I developed a simple quick and small application for windows who probes (ping) a given website each few miliseconds to check the response time, then this information saved and processed to make guesses about if the quality of the network is suitable for things who require reliability, like online gaming or video calls, it is useful for checking if other users of a shared network are using it on a way that will bother you, without invading their privacy.</p>
+            <p>The main logic is basically does two average values, one in a short period of time and the other in a sutantially longer period of time, if there's a expotential jump between the short average (S.Avg) and the long average (L.Avg), it is then safe to assume there's a bandwith bottleneck or connectivity issues, and a windows notification raises when it happens, if there's no messages and the ping values are low for a couple of minutes, you're good to go!</p>
+            <p>This was my first totally finished and compiled application for windows.</p>
+            <button type="button" class="collapsible">Code check</button>
+            <div class="content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span></pre></div></td><td class="code"><div><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.ComponentModel</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Data</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Drawing</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Windows.Forms</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Net.NetworkInformation</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Threading</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">pinger</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Form1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Form</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">Form1</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">InitializeComponent</span><span class="p">();</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">Icon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Properties</span><span class="p">.</span><span class="n">Resources</span><span class="p">.</span><span class="n">Untitled</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="cm">/*private void Form1_Load(Object sender, EventArgs e)</span>
+<span class="cm">        {</span>
+<span class="cm">            Displaynotify();</span>
+<span class="cm">        }</span>
+<span class="cm">        protected void Displaynotify()</span>
+<span class="cm">        {</span>
+<span class="cm">            try</span>
+<span class="cm">            {</span>
+<span class="cm">                notifyIcon1.Icon = new System.Drawing.Icon();</span>
+<span class="cm">            }</span>
+<span class="cm">        }*/</span>
+<span class="w">        </span>
+<span class="w">        </span><span class="kt">bool</span><span class="w"> </span><span class="n">stop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">threadofpinging</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">highestping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">//Register the absolute lowest ping ever.</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">lowestping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1110</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">//This determines how frequent the ping samples are going to be.</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">refreshfrec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">370</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">//Register the lowest average of short ping registered.</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">lowestlavg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">//For the triggers of the notification alerts (higer menans more allowance)</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">triggerstolerance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">//The divisions here determine the size of the arrays in inverse proportion.</span>
+<span class="w">            </span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">savgi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="n">refreshfrec</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">120</span><span class="p">];</span>
+<span class="w">            </span><span class="kt">int</span><span class="p">[]</span><span class="w"> </span><span class="n">lavgi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">int</span><span class="p">[</span><span class="n">refreshfrec</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">30</span><span class="p">];</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Process</span><span class="p">.</span><span class="n">GetCurrentProcess</span><span class="p">();</span>
+<span class="w">            </span><span class="c1">//This olds the time in minutes where the last warning about ping was fired.</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">lastwarning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">99</span><span class="p">;</span>
+<span class="w">            </span><span class="kt">double</span><span class="w"> </span><span class="n">percentageofincrease</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">            </span><span class="c1">//Those are the strings who the notification icon are going to use.</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">warningtext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Network unstable and not suitable for low latency usages&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">warningtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Bottlenecks detected&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">infotext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Network seems stable&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="k">const</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="n">infotitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Looks like the network is able to handle low latency uses again&quot;</span><span class="p">;</span>
+
+<span class="w">            </span><span class="cm">/* https://stackoverflow.com/questions/142003/cross-thread-operation-not-valid-control-accessed-from-a-thread-other-than-the */</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">InvokeRequired</span><span class="p">)</span><span class="w"> </span><span class="c1">// Line #1</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">MethodInvoker</span><span class="p">(</span><span class="n">threadofpinging</span><span class="p">));</span>
+<span class="w">                </span><span class="k">return</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span>
+<span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">stop</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="k">false</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span>
+<span class="w">                </span><span class="n">Ping</span><span class="w"> </span><span class="n">pinger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+
+<span class="w">                    </span><span class="k">try</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">pinger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ping</span><span class="p">();</span>
+<span class="w">                        </span><span class="n">PingReply</span><span class="w"> </span><span class="n">reply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pinger</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="n">textBox1</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">lat</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reply</span><span class="p">.</span><span class="n">RoundtripTime</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+<span class="w">                        </span><span class="n">lat</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                   </span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="k">catch</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                    </span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="c1">//Register the highest ping is happens.</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">highestping</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Int32</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">lat</span><span class="p">.</span><span class="n">Text</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">high</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lat</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">high</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">highestping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Int32</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">lat</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="c1">//Register the lowest ping is happens.</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lowestping</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Int32</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">lat</span><span class="p">.</span><span class="n">Text</span><span class="p">))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">low</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lat</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">low</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">lowestping</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Int32</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">lat</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                </span><span class="c1">//Take the value for the arrays</span>
+<span class="w">                </span><span class="n">lavgi</span><span class="p">[</span><span class="n">lavgi</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Int32</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">lat</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+<span class="w">                </span><span class="n">savgi</span><span class="p">[</span><span class="n">savgi</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Int32</span><span class="p">.</span><span class="n">Parse</span><span class="p">(</span><span class="n">lat</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+<span class="w">                    </span><span class="c1">//Processing array short.</span>
+<span class="w">                    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">savgi</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">size</span><span class="o">--</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">//If not near the end...</span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="c1">//Check if the two before are the same</span>
+<span class="w">                            </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">savgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">savgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">3</span><span class="p">]))</span>
+<span class="w">                            </span><span class="p">{</span>
+<span class="w">                                </span><span class="n">savgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">savgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="w">                            </span><span class="p">}</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                        </span><span class="c1">//If near the end and the last one is empty</span>
+<span class="w">                        </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">((</span><span class="n">size</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">savgi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">savgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">savgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="c1">//Processing array long</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lavgi</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span><span class="w"> </span><span class="n">size</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="n">size</span><span class="o">--</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="c1">//If not near the end...</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="c1">//Check if the two before are the same</span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">lavgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">])</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="p">(</span><span class="n">lavgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">3</span><span class="p">]))</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">lavgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lavgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="c1">//If near the end and the last one is empty</span>
+<span class="w">                    </span><span class="k">else</span><span class="w"> </span><span class="nf">if</span><span class="w"> </span><span class="p">((</span><span class="n">size</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">lavgi</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">lavgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lavgi</span><span class="p">[</span><span class="n">size</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">];</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+
+<span class="w">                </span><span class="c1">//If the small array is all filled with different values.</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(((</span><span class="n">savgi</span><span class="p">[</span><span class="n">savgi</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="p">(</span><span class="n">savgi</span><span class="p">[</span><span class="n">savgi</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]))</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(((</span><span class="n">savgi</span><span class="p">[</span><span class="n">savgi</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="p">(</span><span class="n">savgi</span><span class="p">[</span><span class="n">savgi</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">3</span><span class="p">]))))</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">savg</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">savgi</span><span class="p">.</span><span class="n">Average</span><span class="p">()));</span>
+<span class="w">                    </span><span class="n">savg</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                        </span><span class="c1">//For monitor ping spikes.</span>
+<span class="w">                        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">lowestlavg</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">lavgi</span><span class="p">.</span><span class="n">Average</span><span class="p">()))</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                            </span><span class="n">lowestlavg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">savgi</span><span class="p">.</span><span class="n">Average</span><span class="p">()));</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">lowestlavg</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">lowestlavg</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">savg</span><span class="p">.</span><span class="n">Text</span><span class="p">)</span><span class="o">-</span><span class="n">triggerstolerance</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">lastwarning</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Minute</span><span class="p">))</span>
+<span class="w">                        </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">percentageofincrease</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="n">Round</span><span class="p">(((</span><span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">savgi</span><span class="p">)</span><span class="o">-</span><span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">lavgi</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span><span class="o">/</span><span class="n">Convert</span><span class="p">.</span><span class="n">ToDouble</span><span class="p">(</span><span class="n">lavgi</span><span class="p">)));</span>
+<span class="w">                        </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">warningtitle</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">warningtext</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; (last s.avg: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">savgi</span><span class="p">.</span><span class="n">Average</span><span class="p">()))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot;increase of &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="n">percentageofincrease</span><span class="p">)</span><span class="o">+</span><span class="s">&quot;%&quot;</span><span class="o">+</span><span class="s">&quot;)&quot;</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipIcon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ToolTipIcon</span><span class="p">.</span><span class="n">Warning</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">ShowBalloonTip</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">lowestlavg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">lastwarning</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Minute</span><span class="p">;</span>
+<span class="w">                        </span><span class="p">}</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">((</span><span class="n">lowestlavg</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">lowestlavg</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">savg</span><span class="p">.</span><span class="n">Text</span><span class="p">)</span><span class="o">-</span><span class="n">triggerstolerance</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">((</span><span class="n">lastwarning</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="n">Minute</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipText</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">warningtext</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipIcon</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ToolTipIcon</span><span class="p">.</span><span class="n">Warning</span><span class="p">))</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">infotext</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">infotitle</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipIcon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ToolTipIcon</span><span class="p">.</span><span class="n">Info</span><span class="p">;</span>
+<span class="w">                        </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">ShowBalloonTip</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">                        </span><span class="n">lowestlavg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
+<span class="w">                        </span><span class="c1">//lastwarning = DateTime.Now.Minute;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="n">Array</span><span class="p">.</span><span class="n">Clear</span><span class="p">(</span><span class="n">savgi</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">savgi</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">                    </span><span class="c1">//If the bigger array is all filled (is build up from the data of the shorter one)</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(((</span><span class="n">lavgi</span><span class="p">[</span><span class="n">lavgi</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="p">(</span><span class="n">lavgi</span><span class="p">[</span><span class="n">lavgi</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">]))</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(((</span><span class="n">lavgi</span><span class="p">[</span><span class="n">lavgi</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="p">(</span><span class="n">lavgi</span><span class="p">[</span><span class="n">lavgi</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">3</span><span class="p">]))))</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="n">havg</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToString</span><span class="p">(</span><span class="n">Math</span><span class="p">.</span><span class="n">Round</span><span class="p">(</span><span class="n">lavgi</span><span class="p">.</span><span class="n">Average</span><span class="p">()));</span>
+<span class="w">                        </span><span class="n">havg</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                        </span><span class="n">Array</span><span class="p">.</span><span class="n">Clear</span><span class="p">(</span><span class="n">lavgi</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">lavgi</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                    </span><span class="k">await</span><span class="w"> </span><span class="n">Task</span><span class="p">.</span><span class="n">Delay</span><span class="p">(</span><span class="n">refreshfrec</span><span class="p">);</span>
+
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">button1_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="kt">bool</span><span class="w"> </span><span class="n">pingable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">Ping</span><span class="w"> </span><span class="n">pinger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">null</span><span class="p">;</span>
+<span class="w">            </span><span class="n">stop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="k">try</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">label2</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">label2</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="n">label3</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">label3</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="n">label4</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">label4</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="n">label5</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">label5</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="n">label6</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">label6</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="n">high</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">high</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="n">savg</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">savg</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="n">low</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">low</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="n">havg</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">havg</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+
+<span class="w">                </span><span class="cm">/* https://stackoverflow.com/questions/11800958/using-ping-in-c-sharp */</span>
+<span class="w">                </span><span class="n">pinger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Ping</span><span class="p">();</span>
+<span class="w">                </span><span class="n">PingReply</span><span class="w"> </span><span class="n">reply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pinger</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="n">textBox1</span><span class="p">.</span><span class="n">Text</span><span class="p">);</span>
+<span class="w">                </span><span class="n">pingable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reply</span><span class="p">.</span><span class="n">Status</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">IPStatus</span><span class="p">.</span><span class="n">Success</span><span class="p">;</span>
+<span class="w">                </span><span class="n">lat</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="n">lat</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reply</span><span class="p">.</span><span class="n">RoundtripTime</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
+<span class="w">                </span><span class="n">lat</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="n">errorProvider1</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+<span class="w">                </span><span class="n">ThreadStart</span><span class="w"> </span><span class="n">repeat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ThreadStart</span><span class="p">(</span><span class="n">threadofpinging</span><span class="p">);</span>
+<span class="w">                </span><span class="n">Thread</span><span class="w"> </span><span class="n">repeat2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Thread</span><span class="p">(</span><span class="n">repeat</span><span class="p">);</span>
+<span class="w">                </span><span class="n">repeat2</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">                </span><span class="cm">/*pruebo tutorial de esta pagina https://www.tutorialspoint.com/csharp/csharp_multithreading.htm */</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">catch</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">errorProvider1</span><span class="p">.</span><span class="n">SetError</span><span class="p">(</span><span class="n">textBox1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Not a valid address&quot;</span><span class="p">);</span>
+<span class="w">                </span><span class="n">label2</span><span class="p">.</span><span class="n">Visible</span><span class="o">=</span><span class="k">false</span><span class="p">;</span>
+<span class="w">                </span><span class="n">label3</span><span class="p">.</span><span class="n">Visible</span><span class="o">=</span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">finally</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pinger</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">pinger</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">label1_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">contextMenuStrip2_Opening</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">CancelEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">textBox1_TextChanged</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">button2_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">stop</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">lat</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">lat</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">            </span><span class="n">high</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">high</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">            </span><span class="n">savg</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">savg</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">            </span><span class="n">low</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">low</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">            </span><span class="n">havg</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="n">havg</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">label2_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">textBox1_KeyDown</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">KeyEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">KeyCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">Enter</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">button1</span><span class="p">.</span><span class="n">PerformClick</span><span class="p">();</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">KeyCode</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">Keys</span><span class="p">.</span><span class="n">Space</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="cm">/*https://stackoverflow.com/questions/3558814/net-textbox-handling-the-enter-key */</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">label4_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">notifyIcon1_MouseDoubleClick</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">MouseEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">Show</span><span class="p">();</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">WindowState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FormWindowState</span><span class="p">.</span><span class="n">Normal</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">ShowInTaskbar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">            </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">            </span><span class="cm">/*this.Activate();</span>
+<span class="cm">            this.Focus();</span>
+<span class="cm">            this.BringToFront();*/</span>
+<span class="w">            </span>
+<span class="w">            </span>
+<span class="w">            </span><span class="cm">/*notifyIcon1.Visible = false;*/</span>
+<span class="w">            </span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_Resize</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//if the form is minimized  </span>
+<span class="w">            </span><span class="c1">//hide it from the task bar  </span>
+<span class="w">            </span><span class="c1">//and show the system tray icon (represented by the NotifyIcon control)  </span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">WindowState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">FormWindowState</span><span class="p">.</span><span class="n">Minimized</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Hide</span><span class="p">();</span>
+<span class="w">                </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">Visible</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">true</span><span class="p">;</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">ShowInTaskbar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<span class="w">                </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipIcon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ToolTipIcon</span><span class="p">.</span><span class="n">Info</span><span class="p">;</span><span class="w"> </span>
+<span class="w">                </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipTitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Still here&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">BalloonTipText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;FWI&quot;</span><span class="p">;</span>
+<span class="w">                </span><span class="n">notifyIcon1</span><span class="p">.</span><span class="n">ShowBalloonTip</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+
+
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">SizeChanged</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">Form1_Resize</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div></td></tr></table></div>
             <h2>Windows forms + selenium webscrapper for in real-time wind energy generation</h2>
+            <img src="../../resources/70pc.gif" alt="Program image">
+            <img src="../../resources/wind.png" alt="Program image">
             <p>I realized that people worry way too much about electric prices in a given timeframe and have no long-term strategy to tackle both electricity prices and carbon emissions, so I developed a webscrapper to fetch real time information about how much wind energy is part of the energy mix of Ireland's electric grid, the plan was to use this information alongside the weathercast's to automatically run home devices tampering them with ESP32 or Arduino devices, but found no way of comercialize this or find people interested on it, so it ended up as a personal utility who let me know when to run a washing machine or a kettle, I still want to finish it though.</p>
+            <button type="button" class="collapsible">Code check</button>
+            <div class="content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span></pre></div></td><td class="code"><div><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">OpenQA.Selenium</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">OpenQA.Selenium.Firefox</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">OpenQA.Selenium.Support.UI</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Diagnostics</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Reflection</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Threading.Channels</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">WindPercentageIreland.Properties</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Forms</span><span class="p">.</span><span class="n">Timer</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">WindPercentageIreland</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Form1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Form</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">Form1</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">InitializeComponent</span><span class="p">();</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">FormClosing</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FormClosingEventHandler</span><span class="p">(</span><span class="n">Form1_FormClosing</span><span class="p">);</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">originalformsize</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">originalslidersize</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">originalslidertagsize</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">originalfontsize</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">originalpicsize</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">refreshrate</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">percentage</span><span class="p">;</span>
+
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">webscraper</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">StackTrace</span><span class="w"> </span><span class="n">stackTrace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StackTrace</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Get the calling method</span>
+<span class="w">            </span><span class="n">StackFrame</span><span class="w"> </span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stackTrace</span><span class="p">.</span><span class="n">GetFrame</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">MethodBase</span><span class="w"> </span><span class="n">callingMethod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frame</span><span class="p">.</span><span class="n">GetMethod</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Get the name of the calling method</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">callingMethodName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">callingMethod</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+<span class="w">            </span><span class="n">FirefoxOptions</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxOptions</span><span class="p">();</span>
+<span class="w">            </span><span class="n">options</span><span class="p">.</span><span class="n">AddArguments</span><span class="p">(</span><span class="s">&quot;--headless&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">options</span><span class="p">.</span><span class="n">BrowserExecutableLocation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;C:\\Program Files\\Mozilla Firefox\\firefox.exe&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">IWebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxDriver</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="n">CurrentDirectory</span><span class="p">,</span><span class="w"> </span><span class="n">options</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">driver</span><span class="p">.</span><span class="n">Navigate</span><span class="p">().</span><span class="n">GoToUrl</span><span class="p">(</span><span class="s">&quot;https://www.windenergy.ie/live/&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">//these try/catch are here because depending on your internet conection the whole program can crash if it doesn&#39;t find the value and the page has a loading screen.</span>
+<span class="w">            </span><span class="k">try</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="n">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">CssSelector</span><span class="p">(</span><span class="s">&quot;#percent&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">catch</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">800</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">try</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="n">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">CssSelector</span><span class="p">(</span><span class="s">&quot;#percent&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">catch</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">800</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">try</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="n">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">CssSelector</span><span class="p">(</span><span class="s">&quot;#percent&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">catch</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">800</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">try</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="n">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">CssSelector</span><span class="p">(</span><span class="s">&quot;#percent&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">catch</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">800</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="n">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">CssSelector</span><span class="p">(</span><span class="s">&quot;#percent&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">labelvalue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
+<span class="w">            </span><span class="n">labelvalue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">labelvalue</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">labelvalue</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">pc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">labelvalue</span><span class="p">);</span>
+<span class="w">            </span><span class="n">driver</span><span class="p">.</span><span class="n">Manage</span><span class="p">().</span><span class="n">Cookies</span><span class="p">.</span><span class="n">DeleteAllCookies</span><span class="p">();</span>
+<span class="w">            </span><span class="n">driver</span><span class="p">.</span><span class="n">Quit</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_10pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_20pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_30pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">40</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_40pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_50pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_60pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">70</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_70pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">80</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_80pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">90</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_90pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_100pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">pc</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">originalformsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+<span class="w">            </span><span class="n">originalslidersize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+<span class="w">            </span><span class="n">originalslidertagsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="n">label2</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+<span class="w">            </span><span class="n">originalfontsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="n">label1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+<span class="w">            </span><span class="n">originalpicsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; minutes&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Update</span><span class="p">();</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">            </span><span class="n">percentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">webscraper</span><span class="p">();</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; minutes&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Update</span><span class="p">();</span>
+<span class="w">            </span><span class="n">refreshrate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60000</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">refreshrate</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">timer1_Tick</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+<span class="w">            </span><span class="n">percentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">webscraper</span><span class="p">();</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">resizecalc</span><span class="p">(</span><span class="n">Rectangle</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">Control</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//https://www.youtube.com/watch?v=TTsyUclt-XU</span>
+<span class="w">            </span><span class="kt">float</span><span class="w"> </span><span class="n">widthratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="k">this</span><span class="p">.</span><span class="n">Width</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">originalformsize</span><span class="p">.</span><span class="n">Width</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">float</span><span class="w"> </span><span class="n">heightratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">originalformsize</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">newwidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">r</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">widthratio</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">newheight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">r</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">heightratio</span><span class="p">);</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">newx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">r</span><span class="p">.</span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">widthratio</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">newy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">r</span><span class="p">.</span><span class="n">Y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">heightratio</span><span class="p">);</span>
+
+
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Label&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">//https://pixelsconverter.com/px-to-pt</span>
+<span class="w">                </span><span class="kt">float</span><span class="w"> </span><span class="n">fontratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)((((</span><span class="n">newwidth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newheight</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="p">));</span>
+<span class="w">                </span><span class="n">Font</span><span class="w"> </span><span class="n">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Font</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">Font</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">fontratio</span><span class="p">);</span>
+<span class="w">                </span><span class="n">newheight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">font</span><span class="p">.</span><span class="n">Height</span><span class="p">;</span>
+<span class="w">                </span><span class="n">c</span><span class="p">.</span><span class="n">Font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">font</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;PictureBox&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">newwidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">newwidth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newheight</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">                </span><span class="n">newheight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newwidth</span><span class="p">;</span>
+<span class="w">                </span><span class="n">newy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">newheight</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;TrackBar&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">newy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">45</span><span class="p">;</span>
+<span class="w">                </span><span class="n">newx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">label2</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label3</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">35</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">//If you become smaller than the objects then don&#39;t</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label3</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Width</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label3</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Update</span><span class="p">();</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="cm">/*newwidth = r.Width;</span>
+<span class="cm">                newheight = r.Height;</span>
+<span class="cm">                newx = r.X;</span>
+<span class="cm">                newy = r.Y;*/</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Update</span><span class="p">();</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="cm">/*newwidth = r.Width;</span>
+<span class="cm">                newheight = r.Height;</span>
+<span class="cm">                newx = r.X;</span>
+<span class="cm">                newy = r.Y;*/</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;TrackBar&quot;</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">newy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">45</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">newx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">label2</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label3</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">35</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">c</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="n">newx</span><span class="p">,</span><span class="w"> </span><span class="n">newy</span><span class="p">);</span>
+<span class="w">            </span><span class="n">c</span><span class="p">.</span><span class="n">Size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Size</span><span class="p">(</span><span class="n">newwidth</span><span class="p">,</span><span class="w"> </span><span class="n">newheight</span><span class="p">);</span>
+
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_Resize</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">resizecalc</span><span class="p">(</span><span class="n">originalslidersize</span><span class="p">,</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">resizecalc</span><span class="p">(</span><span class="n">originalfontsize</span><span class="p">,</span><span class="w"> </span><span class="n">label1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">resizecalc</span><span class="p">(</span><span class="n">originalpicsize</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">//label2.Location = new Point((trackBar1.Location.X + (trackBar1.Width / 2) - (label2.Width / 2)), trackBar1.Location.Y - 45);</span>
+<span class="w">            </span><span class="c1">//label3.Location = new Point((trackBar1.Location.X + (trackBar1.Width / 2) - (label3.Width / 2)), trackBar1.Location.Y + 55);</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">((</span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">15</span><span class="p">);</span>
+<span class="w">            </span><span class="n">label2</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">((</span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">),</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">15</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">label3_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">trackBar1_Scroll</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; minutes&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Update</span><span class="p">();</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">trackBar1_MouseUp</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">MouseEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">refreshrate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60000</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">refreshrate</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">            </span><span class="n">percentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">webscraper</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">pictureBox1_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_FormClosing</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">FormClosingEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">label1_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div></td></tr></table></div>
         </div>
             
         
         <div id="HTML">
-            <h1>HTML and CSS projects.</h1>
-            <h2>It's a me, a webpage! Press F12.</h2>
+            <h1>HTML and CSS proyects.</h1>
+            <h2>It's a me, a webpage! Press F12. (Or the debugging key of your web browser)</h2>
             <p>Seriously, I did this without presets.</p>
         </div>
         </div>

@@ -1125,17 +1125,543 @@
         <div id="csharp">
             <h1>Projectos de C#.</h1>
             <h2>Analizador de latencia con Windows forms.</h2>
+            <img src="../../resources/pinger.png" alt="Program image">
             <p>Desarroyé una simple y rápida aplicación para windows que sondea (ping) un sitio web dado cada pocos milisegundos para comprobar el tiempo de respuesta, después esta información es guardada y procesada para hacer deducciones de si la calidad de la red es apta para cosas que requieren estabiliad, como jugar online o realizar videollamadas, es útil para comprobar si otros usuarios de una red compartida están usándola de una manera en la que pueda interrumpirte, sin invadir la privacidad de ellos.</p>
+            <p>La lógica principal es básicamente hacer dos valores promedio, uno en un período corto de tiempo y el otro en un período de tiempo sustancialmente más largo, si hay un salto exponencial entre el promedio corto (S.Avg) y el promedio largo (L.Avg), entonces es seguro asumir que hay un cuello de botella de ancho de banda o problemas de conectividad, y aparecerá una notificación de Windows cuando esto sucede, si no hay mensajes y los valores de ping son bajos durante un par de minutos, ¡Tienes el visto bueno!</p>
             <p>Esta fué mi primera aplicación totalmente finalizada y compilada para windows.</p>
-            <h2>Windows forms + selenium webscrapper for in real-time wind energy generation</h2>
             <h2>Un webscrapper basado en Windows Forms + selenium para consultar la generación a nivel nacional de energía eólica en tiempo real.</h2>
-            <p>Me he dado cuenta de que la gente se preocupa demasiado por los precios de la electricidad en el momento actual pero no tienen una estrategia a largo plazo para tumbar tanto los precios de la electricidad como las emisiones que esta genera, asi que desarroye un webscrapper para sacar información el tiempo real del porcentaje de cuanta energía eólica se vierte en la red eléctrica de Irlanda, el plan era usar esta información junto a la de predicciones meteorológicas para programar el uso de electrodomésticos en un periodo de tiempo óptmio, pero no encontré una manera de comercializar esto o encontrar personas interesadas en ello, así que termino siendo una herramienta de uso peronal. Aunque aún estoy interesado en finalizarla si se da el caso.</p>
+            <img src="../../resources/70pc.gif" alt="Program image">
+            <img src="../../resources/wind.png" alt="Program image">
+            <p>Me he dado cuenta de que la gente se preocupa demasiado por los precios de la electricidad en el momento actual, pero no tienen una estrategia a largo plazo para tumbar tanto los precios de la electricidad como las emisiones que esta genera, asi que desarrollé un webscrapper para sacar información el tiempo real del porcentaje de cuanta energía eólica se vierte en la red eléctrica de Irlanda, el plan era usar esta información junto a la de predicciones meteorológicas para programar el uso de electrodomésticos en un periodo de tiempo óptmio, pero no encontré una manera de comercializar esto, o encontrar personas interesadas en ello, así que termino siendo una herramienta sin terminar y de uso peronal. Aunque aún estoy interesado en finalizarla si se da el caso.</p>
+                        <button type="button" class="collapsible">Comprobar codigo</button>
+            <div class="content"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span>
+<span class="normal">146</span>
+<span class="normal">147</span>
+<span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span>
+<span class="normal">161</span>
+<span class="normal">162</span>
+<span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span>
+<span class="normal">167</span>
+<span class="normal">168</span>
+<span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span>
+<span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span></pre></div></td><td class="code"><div><pre><span></span><span class="k">using</span><span class="w"> </span><span class="nn">OpenQA.Selenium</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">OpenQA.Selenium.Firefox</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">OpenQA.Selenium.Support.UI</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Diagnostics</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Reflection</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">System.Threading.Channels</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">WindPercentageIreland.Properties</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">Timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">System</span><span class="p">.</span><span class="n">Windows</span><span class="p">.</span><span class="n">Forms</span><span class="p">.</span><span class="n">Timer</span><span class="p">;</span>
+
+<span class="k">namespace</span><span class="w"> </span><span class="nn">WindPercentageIreland</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">partial</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">Form1</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">Form</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="nf">Form1</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">InitializeComponent</span><span class="p">();</span>
+<span class="w">            </span><span class="k">this</span><span class="p">.</span><span class="n">FormClosing</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FormClosingEventHandler</span><span class="p">(</span><span class="n">Form1_FormClosing</span><span class="p">);</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">originalformsize</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">originalslidersize</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">originalslidertagsize</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">originalfontsize</span><span class="p">;</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="n">Rectangle</span><span class="w"> </span><span class="n">originalpicsize</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">refreshrate</span><span class="p">;</span>
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">percentage</span><span class="p">;</span>
+
+
+<span class="w">        </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">webscraper</span><span class="p">()</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">StackTrace</span><span class="w"> </span><span class="n">stackTrace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">StackTrace</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Get the calling method</span>
+<span class="w">            </span><span class="n">StackFrame</span><span class="w"> </span><span class="n">frame</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stackTrace</span><span class="p">.</span><span class="n">GetFrame</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">MethodBase</span><span class="w"> </span><span class="n">callingMethod</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">frame</span><span class="p">.</span><span class="n">GetMethod</span><span class="p">();</span>
+
+<span class="w">            </span><span class="c1">// Get the name of the calling method</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">callingMethodName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">callingMethod</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+<span class="w">            </span><span class="n">FirefoxOptions</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxOptions</span><span class="p">();</span>
+<span class="w">            </span><span class="n">options</span><span class="p">.</span><span class="n">AddArguments</span><span class="p">(</span><span class="s">&quot;--headless&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">options</span><span class="p">.</span><span class="n">BrowserExecutableLocation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;C:\\Program Files\\Mozilla Firefox\\firefox.exe&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">IWebDriver</span><span class="w"> </span><span class="n">driver</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FirefoxDriver</span><span class="p">(</span><span class="n">Environment</span><span class="p">.</span><span class="n">CurrentDirectory</span><span class="p">,</span><span class="w"> </span><span class="n">options</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">driver</span><span class="p">.</span><span class="n">Navigate</span><span class="p">().</span><span class="n">GoToUrl</span><span class="p">(</span><span class="s">&quot;https://www.windenergy.ie/live/&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">//these try/catch are here because depending on your internet conection the whole program can crash if it doesn&#39;t find the value and the page has a loading screen.</span>
+<span class="w">            </span><span class="k">try</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="n">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">CssSelector</span><span class="p">(</span><span class="s">&quot;#percent&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">catch</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">800</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">try</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="n">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">CssSelector</span><span class="p">(</span><span class="s">&quot;#percent&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">catch</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">800</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">try</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="n">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">CssSelector</span><span class="p">(</span><span class="s">&quot;#percent&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">catch</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">800</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">try</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">driver</span><span class="p">.</span><span class="n">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">CssSelector</span><span class="p">(</span><span class="s">&quot;#percent&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">catch</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">Thread</span><span class="p">.</span><span class="n">Sleep</span><span class="p">(</span><span class="mi">800</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="kt">var</span><span class="w"> </span><span class="n">element</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">driver</span><span class="p">.</span><span class="n">FindElement</span><span class="p">(</span><span class="n">By</span><span class="p">.</span><span class="n">CssSelector</span><span class="p">(</span><span class="s">&quot;#percent&quot;</span><span class="p">));</span>
+<span class="w">            </span><span class="kt">string</span><span class="w"> </span><span class="n">labelvalue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element</span><span class="p">.</span><span class="n">Text</span><span class="p">;</span>
+<span class="w">            </span><span class="n">labelvalue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">labelvalue</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">labelvalue</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">pc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Convert</span><span class="p">.</span><span class="n">ToInt32</span><span class="p">(</span><span class="n">labelvalue</span><span class="p">);</span>
+<span class="w">            </span><span class="n">driver</span><span class="p">.</span><span class="n">Manage</span><span class="p">().</span><span class="n">Cookies</span><span class="p">.</span><span class="n">DeleteAllCookies</span><span class="p">();</span>
+<span class="w">            </span><span class="n">driver</span><span class="p">.</span><span class="n">Quit</span><span class="p">();</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_10pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">20</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_20pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">30</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_30pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">40</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_40pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">50</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_50pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">60</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_60pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">70</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_70pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">80</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_80pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">90</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_90pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="n">_100pc</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="n">pc</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_Load</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">originalformsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+<span class="w">            </span><span class="n">originalslidersize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+<span class="w">            </span><span class="n">originalslidertagsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="n">label2</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+<span class="w">            </span><span class="n">originalfontsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="n">label1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+<span class="w">            </span><span class="n">originalpicsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Rectangle</span><span class="p">(</span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; minutes&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Update</span><span class="p">();</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">            </span><span class="n">percentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">webscraper</span><span class="p">();</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; minutes&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Update</span><span class="p">();</span>
+<span class="w">            </span><span class="n">refreshrate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60000</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">refreshrate</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">timer1_Tick</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+<span class="w">            </span><span class="n">percentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">webscraper</span><span class="p">();</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">resizecalc</span><span class="p">(</span><span class="n">Rectangle</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">Control</span><span class="w"> </span><span class="n">c</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">//https://www.youtube.com/watch?v=TTsyUclt-XU</span>
+<span class="w">            </span><span class="kt">float</span><span class="w"> </span><span class="n">widthratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="k">this</span><span class="p">.</span><span class="n">Width</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">originalformsize</span><span class="p">.</span><span class="n">Width</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">float</span><span class="w"> </span><span class="n">heightratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)(</span><span class="n">originalformsize</span><span class="p">.</span><span class="n">Height</span><span class="p">);</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">newwidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">r</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">widthratio</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">newheight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">r</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">heightratio</span><span class="p">);</span>
+
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">newx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">r</span><span class="p">.</span><span class="n">X</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">widthratio</span><span class="p">);</span>
+<span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">newy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">r</span><span class="p">.</span><span class="n">Y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">heightratio</span><span class="p">);</span>
+
+
+
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Label&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="c1">//https://pixelsconverter.com/px-to-pt</span>
+<span class="w">                </span><span class="kt">float</span><span class="w"> </span><span class="n">fontratio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">float</span><span class="p">)((((</span><span class="n">newwidth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newheight</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0.1</span><span class="p">));</span>
+<span class="w">                </span><span class="n">Font</span><span class="w"> </span><span class="n">font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Font</span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">Font</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">fontratio</span><span class="p">);</span>
+<span class="w">                </span><span class="n">newheight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">font</span><span class="p">.</span><span class="n">Height</span><span class="p">;</span>
+<span class="w">                </span><span class="n">c</span><span class="p">.</span><span class="n">Font</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">font</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;PictureBox&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">newwidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">newwidth</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">newheight</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">                </span><span class="n">newheight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">newwidth</span><span class="p">;</span>
+<span class="w">                </span><span class="n">newy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">newheight</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;TrackBar&quot;</span><span class="p">)</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="n">newy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">45</span><span class="p">;</span>
+<span class="w">                </span><span class="n">newx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">label2</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label3</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">35</span><span class="p">);</span>
+<span class="w">            </span><span class="p">}</span>
+
+<span class="w">            </span><span class="c1">//If you become smaller than the objects then don&#39;t</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label3</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Width</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label3</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Update</span><span class="p">();</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="cm">/*newwidth = r.Width;</span>
+<span class="cm">                newheight = r.Height;</span>
+<span class="cm">                newx = r.X;</span>
+<span class="cm">                newy = r.Y;*/</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="p">))</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">25</span><span class="p">;</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Update</span><span class="p">();</span>
+<span class="w">                </span><span class="k">this</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">                </span><span class="cm">/*newwidth = r.Width;</span>
+<span class="cm">                newheight = r.Height;</span>
+<span class="cm">                newx = r.X;</span>
+<span class="cm">                newy = r.Y;*/</span>
+<span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">c</span><span class="p">.</span><span class="n">GetType</span><span class="p">().</span><span class="n">Name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;TrackBar&quot;</span><span class="p">)</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">newy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Height</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">45</span><span class="p">;</span>
+<span class="w">                    </span><span class="n">newx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">label2</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">label3</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">35</span><span class="p">);</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="n">c</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">(</span><span class="n">newx</span><span class="p">,</span><span class="w"> </span><span class="n">newy</span><span class="p">);</span>
+<span class="w">            </span><span class="n">c</span><span class="p">.</span><span class="n">Size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Size</span><span class="p">(</span><span class="n">newwidth</span><span class="p">,</span><span class="w"> </span><span class="n">newheight</span><span class="p">);</span>
+
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_Resize</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">resizecalc</span><span class="p">(</span><span class="n">originalslidersize</span><span class="p">,</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">resizecalc</span><span class="p">(</span><span class="n">originalfontsize</span><span class="p">,</span><span class="w"> </span><span class="n">label1</span><span class="p">);</span>
+<span class="w">            </span><span class="n">resizecalc</span><span class="p">(</span><span class="n">originalpicsize</span><span class="p">,</span><span class="w"> </span><span class="n">pictureBox1</span><span class="p">);</span>
+<span class="w">            </span><span class="c1">//label2.Location = new Point((trackBar1.Location.X + (trackBar1.Width / 2) - (label2.Width / 2)), trackBar1.Location.Y - 45);</span>
+<span class="w">            </span><span class="c1">//label3.Location = new Point((trackBar1.Location.X + (trackBar1.Width / 2) - (label3.Width / 2)), trackBar1.Location.Y + 55);</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">((</span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Width</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="p">),</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">15</span><span class="p">);</span>
+<span class="w">            </span><span class="n">label2</span><span class="p">.</span><span class="n">Location</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Point</span><span class="p">((</span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">X</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">label2</span><span class="p">.</span><span class="n">Size</span><span class="p">.</span><span class="n">Width</span><span class="p">),</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Location</span><span class="p">.</span><span class="n">Y</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">15</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">label3_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">trackBar1_Scroll</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Value</span><span class="p">.</span><span class="n">ToString</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">&quot; minutes&quot;</span><span class="p">;</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Update</span><span class="p">();</span>
+<span class="w">            </span><span class="n">label3</span><span class="p">.</span><span class="n">Refresh</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">trackBar1_MouseUp</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">MouseEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">refreshrate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">trackBar1</span><span class="p">.</span><span class="n">Value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60000</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Interval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">refreshrate</span><span class="p">;</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Stop</span><span class="p">();</span>
+<span class="w">            </span><span class="n">timer1</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+<span class="w">            </span><span class="n">percentage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">webscraper</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">pictureBox1_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Form1_FormClosing</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">FormClosingEventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">        </span><span class="p">}</span>
+
+<span class="w">        </span><span class="k">private</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">label1_Click</span><span class="p">(</span><span class="kt">object</span><span class="w"> </span><span class="n">sender</span><span class="p">,</span><span class="w"> </span><span class="n">EventArgs</span><span class="w"> </span><span class="n">e</span><span class="p">)</span>
+<span class="w">        </span><span class="p">{</span>
+
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div></td></tr></table></div>
         </div>
             
         
         <div id="HTML">
-            <h1>HTML and CSS projects.</h1>
-            <h2>Soy yo, una página web! Pulsa F12.</h2>
+            <h1>Proyectos HTML y CSS.</h1>
+            <h2>Soy yo, una página web! Pulsa F12. (O la tecla de debugging de tu navegador web)</h2>
             <p>Enserio, estoy programada sin plantillas.</p>
         </div>
         </div>
