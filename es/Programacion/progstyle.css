@@ -154,7 +154,7 @@ h2, p, h1, button, img {
     width: 100pc;
     height: 100pc;
     position: absolute;
-    overflow:auto;
+    overflow:visible;
     margin-top: 3%;
 }
 #loading {
