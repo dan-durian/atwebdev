@@ -1,3 +1,12 @@
+# .htaccess in the document root
+
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# ---------- Canonical redirect (optional) ----------
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[?\s] [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# ---------- Internal rewrite: /foo → /foo.html ----------
+RewriteCond %{REQUEST_URI} !\.[^./]+$          # no extension
+RewriteCond %{REQUEST_FILENAME}.html -f        # file exists
+RewriteRule ^(.+)$ $1.html [L]
