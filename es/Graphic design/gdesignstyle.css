@@ -93,8 +93,12 @@ h2, p, h1, h3 {
   margin-top: 2%;
   margin-bottom: 2%;
 }
-img.loading {opacity: 0;
-transition: opacity 3 ease;}
+img {opacity: 0;}
+img.fade-in {animation: fadeIn 2s ease forwards;}
+@keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+}
 @keyframes smoothbackgroundtransition {
             from {background-color: rgba(3, 7, 39, 0);}
             to {background-color: rgb(209, 171, 0);}

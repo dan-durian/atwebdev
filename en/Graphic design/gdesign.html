@@ -19,46 +19,46 @@
             <div id="wallpapers">
             <div>
             <a href="Wallpapers HD/2fractalblender1.html">
-            <img src="../../resources/Wallpapers/0.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="loading">
+            <img src="../../resources/Wallpapers/0.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
             </a>
             <a href="Wallpapers HD/2fractalblender2.html">
-            <img src="../../resources/Wallpapers/1.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="loading">
+            <img src="../../resources/Wallpapers/1.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
             </a>
             <a href="Wallpapers HD/glassrodsround2.html">
-            <img src="../../resources/Wallpapers/2.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="loading">
+            <img src="../../resources/Wallpapers/2.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
             </a>
             </div>
             <div>
             <a href="Wallpapers HD/glassrodsround3.html">
-            <img src="../../resources/Wallpapers/3.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="loading">
+            <img src="../../resources/Wallpapers/3.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
             </a>
             <a href="Wallpapers HD/glassrodsround4.html">
-            <img src="../../resources/Wallpapers/4.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="loading">
+            <img src="../../resources/Wallpapers/4.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
             </a>
             <a href="Wallpapers HD/glassrodsround5.html">
-            <img src="../../resources/Wallpapers/5.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="loading">
+            <img src="../../resources/Wallpapers/5.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
             </a>
             </div>
             <div id="wallpaper">
             <a href="Wallpapers HD/glassrodsround6.html">
-            <img src="../../resources/Wallpapers/6.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="loading">
+            <img src="../../resources/Wallpapers/6.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
             </a>
             <a href="Wallpapers HD/glassrodsroundshallow.html">
-            <img src="../../resources/Wallpapers/7.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="loading">
+            <img src="../../resources/Wallpapers/7.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
             </a>
             <a href="Wallpapers HD/glassrodsround.html">
-            <img src="../../resources/Wallpapers/8.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="loading">
+            <img src="../../resources/Wallpapers/8.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
             </a>
             </div>
             <div id="wallpaper">
             <a href="Wallpapers HD/glassrods.html">
-            <img src="../../resources/Wallpapers/9.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="loading">
+            <img src="../../resources/Wallpapers/9.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
             </a>
             <a href="Wallpapers HD/taza.html">
-            <img src="../../resources/Wallpapers/10.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="loading">
+            <img src="../../resources/Wallpapers/10.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
             </a>
             <a href="Wallpapers HD/thefworld.html">
-            <img src="../../resources/Wallpapers/11.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="loading">
+            <img src="../../resources/Wallpapers/11.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
             </a>
 
 
@@ -98,24 +98,16 @@
         </div>
         </div>
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-    // Grab every image that has the .loading class
-    const imgs = document.querySelectorAll('img.loading');
+document.addEventListener('DOMContentLoaded', () => {
+    // Grab all images we want to animate
+    const imgs = document.querySelectorAll('img');
 
     imgs.forEach(img => {
-        // If the image is already cached, it may fire 'load' immediately
-        if (img.complete) {
-            img.classList.remove('loading');
+        if (img.complete) {          // already cached
+            img.classList.add('fade-in');
         } else {
-            // Attach load handler
-            img.addEventListener('load', () => {
-                img.classList.remove('loading');
-            });
-            // Optional: error handling – still show something?
-            img.addEventListener('error', () => {
-                console.warn('Image failed to load:', img.src);
-                // You could keep it hidden, replace with a placeholder, etc.
-            });
+            img.onload = () => img.classList.add('fade-in');
+            img.onerror = () => console.warn('Failed to load', img.src);
         }
     });
 });
