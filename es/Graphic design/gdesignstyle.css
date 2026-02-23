@@ -94,7 +94,7 @@ h2, p, h1, h3 {
   margin-bottom: 2%;
 }
 img.loading {opacity: 0;
-transition: opacity 0.5 ease;}
+transition: opacity 3 ease;}
 @keyframes smoothbackgroundtransition {
             from {background-color: rgba(3, 7, 39, 0);}
             to {background-color: rgb(209, 171, 0);}
