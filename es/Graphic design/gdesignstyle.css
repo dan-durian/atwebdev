@@ -65,6 +65,22 @@ button {
               color: white;
               margin-left: 7%;
               margin-right: 7%;
+              background-color: #580726;
+              cursor: pointer;
+              padding: 18px;
+              border: none;
+              text-align: left;
+              outline: none;
+              font-size: 25px;
+              justify-content: center;
+              place-items: center;
+              border-radius: 15px;
+              text-align: center;
+              box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;
+            -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1) inset;
+            font-family: 'Dunking';
+            display: flex;
 }
 #videos {
   margin-left: 7%;
@@ -72,11 +88,13 @@ button {
   margin-top: 2%;
   display: grid;
   grid: 700px / auto auto auto auto;
-  width: 100%
+  width: 100%;
+  opacity: 0;
+  display: none;
 }
 
 #bodaux {
-    width: 100pc;
+    width: 86%;
     height: 100pc;
     position: absolute;
     overflow:visible;
@@ -126,13 +144,14 @@ button {
 img.wallpapers {opacity: 0;
 border-radius: 10px;
   box-shadow: 0px 0px 8px 7px rgb(200, 255, 0), 0px 0px 8px 10px rgb(27, 0, 145), 0px 0px 8px 18px rgb(255, 139, 255);}
+
 video {opacity: 1;
 border-radius: 10px;
   box-shadow: 0px 0px 8px 3px rgb(0, 255, 255), 0px 0px 8px 10px rgb(247, 0, 255), 0px 0px 8px 18px rgb(251, 255, 0);
-width: 90%;
+width: 87%;
 height: auto;}
 img.fade-in {animation: fadeIn 2s ease forwards;}
-video.fade-in {animation: fadeIn 2s ease forwards;}
+#videos.fade-in {animation: fadeIn 2s ease forwards;}
 img.wallpapers:hover {
   transform: scale(0.7, 0.7);
 }

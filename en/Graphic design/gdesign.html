@@ -76,8 +76,8 @@
 
             <h3>Accurate and production ready STL models</h3>
             <h2>• Animation</h2>
-            <p>*PSA What you're about to see is content made <span style="font-weight: bold;">without the intention</span> of being part of a portfolio, it can be sensitive to some people as it can be politically charged, vulgar, or un-understandable to some audiences. Regarless of that I'm an advocate for free of speech so I'm not going to bother with creating content specific for this context. If you proceed I understand you are aware of this and that you are in a NSFW friendly enviroment.*</p>
-            <button>Click to uncover the videos</button>
+            <p>*PSA What you're about to see is content made <span style="font-weight: bold;">without the intention</span> of being part of a portfolio, it can be sensitive to some people as it can be politically charged, vulgar, or un-understandable to some audiences. Regarless of that I'm an advocate for free of speech, so I'm not going to bother with creating content specific for this context. If you proceed I understand you are aware of this, and that you are in a NSFW-friendly enviroment.*</p>
+            <button type="button" id="uncover">Click here to uncover the videos</button>
             <div id="videos">
             <video width="24%" height="auto" controls loop preload="metadata">
                 <source src="../../resources/covet.mp4" type="video/mp4">
@@ -122,6 +122,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+const button = document.getElementById("uncover");
+button.addEventListener("click", function() {
+    videosdiv = document.getElementById("videos")
+    videosdiv.style.opacity = 1;
+    videosdiv.style.display = "grid";
+    videosdiv.classList.add("fade-in");
+    button.style.display = "none"
+})
         </script>
     </body>
         <script>
@@ -159,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             function backgroundadjust(){
                 maindiv.style.width = "100%"
-                maindiv.style.right = "100%"    };
+                maindiv.style.right = "100%" };
             window.addEventListener("resize", backgroundadjust);
             window.onload = function () {
                 const tetera = document.getElementById("loading");
