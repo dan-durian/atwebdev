@@ -24,12 +24,28 @@ h2 {
 h3 {
               font-size: 23px;
               font-style: italic;
+              text-decoration: underline;
+              -webkit-animation: smothtexttransition 7s;
+              -moz-animation: smothtexttransition 7s;
+              -ms-animation: smothtexttransition 7s;
+              animation: smoothtexttransition 7s;
+              margin-inline: 0%;
+              color: white;
+              margin-left: 8%;
+              margin-right: 8%;
             }
             p {
-              
+              -webkit-animation: smothtexttransition 7s;
+              -moz-animation: smothtexttransition 7s;
+              -ms-animation: smothtexttransition 7s;
+              animation: smoothtexttransition 7s;
+              margin-inline: 0%;
+              color: white;
+              margin-left: 9%;
+              margin-right: 9%;
               font-size: 30px;
             }
-h2, p, h1, h3 {
+h2, h1 {
               -webkit-animation: smothtexttransition 7s;
               -moz-animation: smothtexttransition 7s;
               -ms-animation: smothtexttransition 7s;
@@ -40,9 +56,23 @@ h2, p, h1, h3 {
               margin-right: 7%;
               
             }
+button {
+              -webkit-animation: smothtexttransition 7s;
+              -moz-animation: smothtexttransition 7s;
+              -ms-animation: smothtexttransition 7s;
+              animation: smoothtexttransition 7s;
+              margin-inline: 0%;
+              color: white;
+              margin-left: 7%;
+              margin-right: 7%;
+}
 #videos {
   margin-left: 7%;
   margin-right: 7%;
+  margin-top: 2%;
+  display: grid;
+  grid: 700px / auto auto auto auto;
+  width: 100%
 }
 
 #bodaux {
@@ -90,14 +120,27 @@ h2, p, h1, h3 {
   width: 100%;
   margin-left: 8%;
   margin-right: 8%;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
-img {opacity: 0;}
+img.wallpapers {opacity: 0;
+border-radius: 10px;
+  box-shadow: 0px 0px 8px 7px rgb(200, 255, 0), 0px 0px 8px 10px rgb(27, 0, 145), 0px 0px 8px 18px rgb(255, 139, 255);}
+video {opacity: 1;
+border-radius: 10px;
+  box-shadow: 0px 0px 8px 3px rgb(0, 255, 255), 0px 0px 8px 10px rgb(247, 0, 255), 0px 0px 8px 18px rgb(251, 255, 0);
+width: 90%;
+height: auto;}
 img.fade-in {animation: fadeIn 2s ease forwards;}
+video.fade-in {animation: fadeIn 2s ease forwards;}
+img.wallpapers:hover {
+  transform: scale(0.7, 0.7);
+}
 @keyframes fadeIn {
-      from { opacity: 0; }
-      to   { opacity: 1; }
+      from { opacity: 0;
+            transform: scale(0.5, 0.5); }
+      to   { opacity: 1; 
+            transform: scale(1, 1);}
 }
 @keyframes smoothbackgroundtransition {
             from {background-color: rgba(3, 7, 39, 0);}

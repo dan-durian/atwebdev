@@ -13,52 +13,52 @@
         <div id="bodaux">
         <div id="blender">
             <h1>Blender protfolio.</h1>
-            <h2>Modeling</h2>
+            <h2>• Modeling</h2>
             <h3>Asthetically focussed</h3>
             <p>Wallpapers, take some if you fancy them by clicking on one.</p>
             <div id="wallpapers">
             <div>
             <a href="Wallpapers HD/2fractalblender1.html">
-            <img src="../../resources/Wallpapers/0.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
+            <img src="../../resources/Wallpapers/0.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
             </a>
             <a href="Wallpapers HD/2fractalblender2.html">
-            <img src="../../resources/Wallpapers/1.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
+            <img src="../../resources/Wallpapers/1.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
             </a>
             <a href="Wallpapers HD/glassrodsround2.html">
-            <img src="../../resources/Wallpapers/2.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
+            <img src="../../resources/Wallpapers/2.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
             </a>
             </div>
             <div>
             <a href="Wallpapers HD/glassrodsround3.html">
-            <img src="../../resources/Wallpapers/3.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
+            <img src="../../resources/Wallpapers/3.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
             </a>
             <a href="Wallpapers HD/glassrodsround4.html">
-            <img src="../../resources/Wallpapers/4.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
+            <img src="../../resources/Wallpapers/4.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
             </a>
             <a href="Wallpapers HD/glassrodsround5.html">
-            <img src="../../resources/Wallpapers/5.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
+            <img src="../../resources/Wallpapers/5.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
             </a>
             </div>
             <div id="wallpaper">
             <a href="Wallpapers HD/glassrodsround6.html">
-            <img src="../../resources/Wallpapers/6.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
+            <img src="../../resources/Wallpapers/6.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
             </a>
             <a href="Wallpapers HD/glassrodsroundshallow.html">
-            <img src="../../resources/Wallpapers/7.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
+            <img src="../../resources/Wallpapers/7.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
             </a>
             <a href="Wallpapers HD/glassrodsround.html">
-            <img src="../../resources/Wallpapers/8.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
+            <img src="../../resources/Wallpapers/8.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
             </a>
             </div>
             <div id="wallpaper">
             <a href="Wallpapers HD/glassrods.html">
-            <img src="../../resources/Wallpapers/9.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
+            <img src="../../resources/Wallpapers/9.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
             </a>
             <a href="Wallpapers HD/taza.html">
-            <img src="../../resources/Wallpapers/10.jpg" width="90%" height="auto" alt="wallpaper" loading="eager">
+            <img src="../../resources/Wallpapers/10.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
             </a>
             <a href="Wallpapers HD/thefworld.html">
-            <img src="../../resources/Wallpapers/11.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy">
+            <img src="../../resources/Wallpapers/11.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
             </a>
 
 
@@ -75,8 +75,9 @@
 
 
             <h3>Accurate and production ready STL models</h3>
-            <h2>Animation</h2>
-            <p>*PSA What you're about to see is content made without the intention of being part of a portfolio, is made for the sake of it, can be sensitive to some people as it can be politically charged, vulgar, or un-understandable to some audiences.*</p>
+            <h2>• Animation</h2>
+            <p>*PSA What you're about to see is content made <span style="font-weight: bold;">without the intention</span> of being part of a portfolio, it can be sensitive to some people as it can be politically charged, vulgar, or un-understandable to some audiences. Regarless of that I'm an advocate for free of speech so I'm not going to bother with creating content specific for this context. If you proceed I understand you are aware of this and that you are in a NSFW friendly enviroment.*</p>
+            <button>Click to uncover the videos</button>
             <div id="videos">
             <video width="24%" height="auto" controls loop preload="metadata">
                 <source src="../../resources/covet.mp4" type="video/mp4">
@@ -108,6 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             img.onload = () => img.classList.add('fade-in');
             img.onerror = () => console.warn('Failed to load', img.src);
+        }
+    });
+    const vids = document.querySelectorAll('video');
+
+    vids.forEach(vid => {
+        if (vid.complete) {          // already cached
+            vid.classList.add('fade-in');
+        } else {
+            vid.onload = () => vid.classList.add('fade-in');
+            vid.onerror = () => console.warn('Failed to load', vid.src);
         }
     });
 });
