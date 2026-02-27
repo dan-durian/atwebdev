@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <meta charset="UTF-8">
         <title>Diseño gráfico</title>
         <link rel="stylesheet" href="gdesignstyle.css">
         <link rel="icon" type="image/x-icon" href="../../resources/star.ico">
@@ -13,14 +14,116 @@
         <div id="bodaux">
         <div id="blender">
             <h1>Blender protfolio.</h1>
-            <h2>Modelado</h2>
-            <h2>Animación</h2>
+            <h2>• Modelado</h2>
+            <h3>Focalizado en apariencias</h3>
+            <p>Fondos de pantalla, si te gusta alguno cógelo clickando en el.</p>
+            <div id="wallpapers">
+            <div>
+            <a href="../../en/Graphic design/Wallpapers HD/2fractalblender1.html">
+            <img src="../../resources/Wallpapers/0.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
+            </a>
+            <a href="../../en/Graphic design/Wallpapers HD/2fractalblender2.html">
+            <img src="../../resources/Wallpapers/1.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
+            </a>
+            <a href="../../en/Graphic design/Wallpapers HD/glassrodsround2.html">
+            <img src="../../resources/Wallpapers/2.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
+            </a>
+            </div>
+            <div>
+            <a href="../../en/Graphic design/Wallpapers HD/glassrodsround3.html">
+            <img src="../../resources/Wallpapers/3.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
+            </a>
+            <a href="../../en/Graphic design/Wallpapers HD/glassrodsround4.html">
+            <img src="../../resources/Wallpapers/4.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
+            </a>
+            <a href="../../en/Graphic design/Wallpapers HD/glassrodsround5.html">
+            <img src="../../resources/Wallpapers/5.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
+            </a>
+            </div>
+            <div id="wallpaper">
+            <a href="../../en/Graphic design/Wallpapers HD/glassrodsround6.html">
+            <img src="../../resources/Wallpapers/6.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
+            </a>
+            <a href="../../en/Graphic design/Wallpapers HD/glassrodsroundshallow.html">
+            <img src="../../resources/Wallpapers/7.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
+            </a>
+            <a href="../../en/Graphic design/Wallpapers HD/glassrodsround.html">
+            <img src="../../resources/Wallpapers/8.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
+            </a>
+            </div>
+            <div id="wallpaper">
+            <a href="../../en/Graphic design/Wallpapers HD/glassrods.html">
+            <img src="../../resources/Wallpapers/9.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
+            </a>
+            <a href="../../en/Graphic design/Wallpapers HD/taza.html">
+            <img src="../../resources/Wallpapers/10.jpg" width="90%" height="auto" alt="wallpaper" loading="eager" class="wallpapers">
+            </a>
+            <a href="../../en/Graphic design/Wallpapers HD/thefworld.html">
+            <img src="../../resources/Wallpapers/11.jpg" width="90%" height="auto" alt="wallpaper" loading="lazy" class="wallpapers">
+            </a>
+
+
+            </div>
+            </div>
+            <h3>Modelos STL de precisión y listo para producción.</h3>
+            <p>Este contenido está inter-relacionado con el diseño gráfico y la impresión 3D, por lo cual para compactar y ordenar el contenido apropiadamente, esos modelos se encuentran en otra sección de esta página web.</p>
+            <button type="button" onclick='location.href="../Impresion 3D/3dprinting.html"'>Ir a la sección de impresiones en 3D</button>
+            <h2>• Animación</h2>
+            <p>*Información de interés general* Lo que se incluye a continuación es contenido hecho <span style="font-weight: bold;">sin la intencionalidad</span> de ser parte de un porfolio, puede ser impactante para algunas personas, ya que puede ser políticamente intenso, vulgar, o incomprensible para algunos públicos. A pesar de ello soy defensor de la libertad de expresión, asi que no me voy a tomar la molestia en crear contenido especificamente para este fin (al menos por ahora). Si continuas comprendo que estas al tanto de esto, y que te encuentras en un lugar en el que ver este tipo de contenido es aceptable.</p>
+            <button type="button" id="uncover">Pulsa para mostrar los vídeos</button>
+            <div id="videos">
+            <video width="24%" height="auto" controls loop preload="metadata">
+                <source src="../../resources/covet.mp4" type="video/mp4">
+            </video>
+            <video width="24%" height="auto" controls loop preload="metadata"">
+                <source src="../../resources/ducking.mp4" type="video/mp4">
+            </video>
+            <video width="24%" height="auto" controls loop preload="metadata">
+                <source src="../../resources/robot.mp4" type="video/mp4">
+            </video>
+            <video width="24%" height="auto" controls loop preload="metadata">
+                <source src="../../resources/dolphins.mp4" type="video/mp4">
+            </video>
+            </div>
         </div>
         <div id="gimp">
             <h1>Gimp y photoshop</h1>
         </div>
         </div>
         </div>
+        <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Grab all images we want to animate
+    const imgs = document.querySelectorAll('img');
+
+    imgs.forEach(img => {
+        if (img.complete) {          // already cached
+            img.classList.add('fade-in');
+        } else {
+            img.onload = () => img.classList.add('fade-in');
+            img.onerror = () => console.warn('Failed to load', img.src);
+        }
+    });
+    const vids = document.querySelectorAll('video');
+
+    vids.forEach(vid => {
+        if (vid.complete) {          // already cached
+            vid.classList.add('fade-in');
+        } else {
+            vid.onload = () => vid.classList.add('fade-in');
+            vid.onerror = () => console.warn('Failed to load', vid.src);
+        }
+    });
+});
+const button = document.getElementById("uncover");
+button.addEventListener("click", function() {
+    videosdiv = document.getElementById("videos")
+    videosdiv.style.opacity = 1;
+    videosdiv.style.display = "grid";
+    videosdiv.classList.add("fade-in");
+    button.style.display = "none"
+})
+        </script>
     </body>
         <script>
             const maindiv = document.getElementById("mainbod")
