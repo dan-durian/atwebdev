@@ -159,7 +159,7 @@
             }
             #coding .caption {
               position: absolute;
-              width: 100%;
+              width: 60%;
               right: 100%;
               left: 0%;
               margin-left: 2%;
@@ -195,6 +195,7 @@
             #dprinter .caption {
               width: 60%;
               position: absolute;
+              left: 0%;
               margin-left: 2%;
               top: 13%;
             }
