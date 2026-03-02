@@ -137,6 +137,9 @@
               transition: all 1s;
               opacity: 0;
             }
+            .absolutes {
+              width: 100%;
+            }
             .visible {
               transform: translateX(0%);
               width: 100vw;
