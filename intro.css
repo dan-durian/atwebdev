@@ -125,14 +125,14 @@
             
             .absolutes:nth-child(even) .view-poll {
               transform: translateX(100%);
-              width: 100vw;
+              width: 100%;
               height: 100vh;
               transition: all 1s;
               opacity: 0;
             }
             .absolutes:nth-child(odd) .view-poll {
               transform: translateX(-100%);
-              width: 100vw;
+              width: 100%;
               height: 100vh;
               transition: all 1s;
               opacity: 0;
