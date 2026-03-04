@@ -16,23 +16,35 @@ h1 {
               font-size: 50px;
               font-weight: bold;
               text-shadow: 2px 2px rgb(211, 98, 23);
-              margin-left: 7%;
-              margin-right: 7%;
-              margin-inline: 0%;
             }
 h2 {
-              font-size: 30px;
-              margin-left: 10%;
-              margin-right: 10%;
-              margin-inline: 0%;
+      font-size: 35px;
             }
-            p {
-              font-size: 30px;
-              margin-left: 17%;
-              margin-right: 17%;
+h3 {
+                font-size: 23px;
+              font-style: italic;
+              text-decoration: underline;
+              -webkit-animation: smothtexttransition 7s;
+              -moz-animation: smothtexttransition 7s;
+              -ms-animation: smothtexttransition 7s;
+              animation: smoothtexttransition 7s;
               margin-inline: 0%;
+              color: white;
+              margin-left: 8%;
+              margin-right: 8%;
+}
+p {
+              -webkit-animation: smothtexttransition 7s;
+              -moz-animation: smothtexttransition 7s;
+              -ms-animation: smothtexttransition 7s;
+              animation: smoothtexttransition 7s;
+              margin-inline: 0%;
+              color: white;
+              margin-left: 9%;
+              margin-right: 9%;
+              font-size: 30px;
             }
-h2, p, h1 {
+h2, h1 {
               -webkit-animation: smothtexttransition 7s;
               -moz-animation: smothtexttransition 7s;
               -ms-animation: smothtexttransition 7s;
@@ -45,11 +57,15 @@ h2, p, h1 {
             }
 
 #bodaux {
-    width: 100pc;
+    width: 86%;
     height: 100pc;
     position: absolute;
-    overflow:auto;
+    overflow:visible;
     margin-top: 3%;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    max-height: 100%;
+    height: 100%;
 }
 #loading {
   background: radial-gradient(circle,rgba(3, 0, 0, 1) 0%, rgba(115, 99, 26, 0.432) 20%, rgba(237, 221, 83, 0) 30%, rgba(237, 221, 83, 0) 100%);
@@ -75,11 +91,15 @@ h2, p, h1 {
     transition: opacity 1s ease;
     display: none;   /* optional – hides the element after fade */
 }
+/*This will be useful in the other pages later on*/
+#bodaux::-webkit-scrollbar{
+  display:none;
+}
 @keyframes smoothbackgroundtransition {
             from {background-color: rgba(3, 7, 39, 0);}
             to {background-color: rgb(3, 88, 0);}
         }
         @keyframes smoothtexttransition {
-                from{color:rgba(255, 253, 219, 0); text-shadow: 2px 2px rgba(211, 98, 23, 0);}
-                to{color:rgb(255, 255, 255); text-shadow: 2px 2px rgb(211, 98, 23);}
+                from{color:rgba(255, 253, 219, 0);}
+                to{color:rgb(255, 255, 255);}
             }
