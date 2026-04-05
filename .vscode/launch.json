@@ -5,9 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Edge",
+            "name": "Launch vscode debuggin",
             "request": "launch",
-            "type": "msedge",
+            "type": "editor-browser",
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
         },
