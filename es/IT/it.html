@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <title>Informática</title>
+        <meta charset="UTF-8">
         <link rel="stylesheet" href="itstyle.css">
         <link rel="icon" type="image/x-icon" href="../../resources/star.ico">
     </head>
@@ -11,20 +12,135 @@
         </div>
         <div id="mainbod">
         <div id="bodaux">
+<!-- Windows section -->
         <div id="windows">
-            <h1>Windows.</h1>
-            <h2>Functional prints.</h2>
-            <h2>Artistic prints.</h2>
+            <h1>Windows</h1>
+            <h2>Distribuciones de usuario</h2>
+
+            <h3>Mantenimiento</h3>
+            <p>
+Mantengo los sistemas actualizados realizando tareas de mantenimiento rutinarias como:
+            aplicar actualizaciones, decidir qué servicios de Windows deben ejecutarse y cuándo,
+            limpiar el registro, borrar cachés y archivos temporales, actualizar el software,
+            crear copias de seguridad y programar tareas automatizadas.
+            </p>
+
+            <h3>Re‑configuración</h3>
+            <p>
+                Para problemas mas críticos dónde el comportamiento esperado del sistema operativo se ve comprometido, tengo experiencia con:
+            </p>
+            <ul>
+                <li><span style="font-weight: bold;">Legacy</span> y <span style="font-weight: bold;">UEFI</span> configuración de BIOS, reflasheado, y actualizado.</li>
+                <li>
+                    Reparar el kernel de Windows usando PowerShell tanto dentro del sistema operativo como desde un USB/DVD con la ISO de instalación de Windows.</li>
+                <li>
+                    Re-dimensionado de particiones, escaneos de virus externos, y recuperación de datos usando <span style="font-weight: bold;">Hiren’s BootCD.</span></li>
+
+            </ul>
+
+            <h1>Windows Server</h1>
+
+            <h2>Active Directory</h2>
+            <p>
+                En un entorno empresarial diseño las estructuras adecuadas y aplico las mejores medidas de seguridad:
+            </p>
+            <ul>
+                <li>
+                    Personalizando poíticas de grupo para garantizar solamente los permisos necesarios.
+                </li>
+                <li>Implementando encriptación <span style="font-weight: bold;">AES‑256</span> cada vez que sea posible (<span style="font-weight: bold;">Kerberos</span>, <span style="font-weight: bold;">LDAP</span>,
+                    <span style="font-weight: bold;">BitLocker</span>, <span style="font-weight: bold;">SMB</span>).</li>
+                <li>
+                    Segmentando redes por departamentos o unidades de trabajo usando subnetting.
+                </li>
+            </ul>
+
+            <h2>SQL Server</h2>
+            <p>
+                He manejado bases de datos SQL en un curso de desarroyo de aplicaciones web y puedo:
+            </p>
+            <ul>
+                <li>Importar y exportar datos de <span style="font-weight: bold;">Excel</span>, <span style="font-weight: bold;">PHP</span>, <span style="font-weight: bold;">MySQL</span>, <span style="font-weight: bold;">pandas</span>, etc.</li>
+                <li>Crear solicitudes de búsqueda personalizadas con <span style="font-weight: bold;">T‑SQL</span>.</li>
+                <li>Evitar ataques de inyeción limpiando las entradas de los usuarios.</li>
+            </ul>
         </div>
-        <div id="linux"></div>
+
+        <!-- Linux section -->
+        <div id="linux">
             <h1>Linux</h1>
+            <h2>
+                Sistemas basados en Debian y Bash Shell
+            </h2>
+            <h3>
+                Conocimiento de comandos comunes
+            </h3>
+            <p>
+                Tengo suficiente familiaridad con el terminal de linux para crear, y mantener en funcionamiento a un servidor desde este, estas son las tareas que me gustaría destacar entre las que puedo realizar:
+            </p>
+            <ul>
+            <li>Mantener los sistemas actualizados con <span style="font-weight: bold;">apt</span> y también resolver problemas con dependencias, paquetes obsoletos, y realizar cambios de versión, cambios de interfaz de usuario etc.</li>
+            <li>Realizar tareas de navegación complejas desde la consola, entubando la salida de comandos como <span style="font-weight: bold;">tree</span> o <span style="font-weight: bold;">ls</span> con <span style="font-weight: bold;">grep</span>.</li>
+            <li>Gestionar procesos y demonios con comandos como <span style="font-weight: bold;">ps</span> y <span style="font-weight: bold;">systemctl</span>.</li>
+            <li>Administrar discos secundarios con <span style="font-weight: bold;">fdisk</span>, <span style="font-weight: bold;">mount/unmount</span>, <span style="font-weight: bold;">df</span>.</li>
+            <li>Comprobar el estado de las interfaces de red, conectividad, y administrar puertos UDP y TCP.</li>
+            <li>Administración de usuarios con <span style="font-weight: bold;">adduser/deluser/usermod</span>, grupos y sus permisos.</li>
+            <li>Creación, edición y procesado de texto con <span style="font-weight: bold;">vim/cat/less/grep/awk/sed/sort</span> y <span style="font-weight: bold;">uniq</span>.</li>
+            <li>Creación y ejecución de scripts de bash.</li>
+            <li>Ejecución de backups simples con <span style="font-weight: bold;">tar</span> y sincronización con <span style="font-weight: bold;">rsync</span>.</li>
+            </ul>
+            <p></p>
+        </div>
+
+        <!-- Network section -->
         <div id="net">
-            <h1>Network and server-side administration.</h1>
-            <h2>It's a me, a webpage! Press F12.</h2>
-            <p>Seriously, I did this without presets.</p>
+            <h1>Administración de redes y servidores.</h1>
+
+            <h2>Redes WAN y subnetting</h2>
+
+            <h3>Implementación en redes Windows</h3>
+            <p>Las redes de Windows pueden ser centralizadas en un dominio de windows server o ser creadas de manera descentralizada, dónde cada cliente decide con quién y que compartir, yo implemento ambas soluciones.</p>
+            <h3>Implementación en redes Linux</h3>
+            <p>
+                Tengo experiencia implementando commandos de <span style="font-weight: bold;">iptables</span> con argumentos avanzados
+                de manera que configure una serie de ordenadores en una determinada topología.
+            </p>
+
+            <h3>Implementación en redes mixtas</h3>
+            <p>
+                Puedo crear redes SMB que permiten a máquinas ejecutando tanto Windows como Linux intercambiar
+                información usando <span style="font-weight: bold;">Samba</span> o la implementación nativa de SMB de Microsoft.
+            </p>
+
+            <h2>Configuracion a medida de cables RJ45 usando la crimpadora.</h2>
+            <p>
+                Tengo experiencia creando cables RJ45 de la longitud y orden de pines deseada
+                 (e.g., modem a ordenador, ordenador a ordenador).
+            </p>
+        </div>
+
+        <!-- Hardware section -->
+        <div id="physical">
+            <h1>Manejo de hardware</h1>
+
+            <h2>Ordenadores de sobremesa y portátiles</h2>
+            <p>
+                Durante unas prácticas de empresa de cuatro meses en una tienda de ordenadores que ofrece montajes personalizados
+                y servicios de mantenimiento, he adquirido práctica con:
+                aplicar soluciones de disipación térmica (incluyendo metal líquido), montar piezas internas de ordenadores de sobremesa,
+                manejo de cables, limpieza física con aire comprimido y alchol, etc.
+            </p>
+
+            <h2>Smartphones y tabletas</h2>
+            <p>
+                Puedo actuar una serie de reparaciones simples en smartphones y tabletas cuándo
+                las herramientas adecuadas se encuentran a disposición, tales como:
+                ablandamiento y apertura de paneles de cristal con una pistola de calor,
+                reemplazar placas de carga, baterías y placas base.
+            </p>
         </div>
         </div>
-    </div>
+        </div>
     </body>
         <script>
             const maindiv = document.getElementById("mainbod")
@@ -68,7 +184,7 @@
                 if (tetera) {
                    setTimeout(() => {
                     tetera.classList.add('fade-out');
-                   }, 3000);           // triggers CSS transition
+                   }, 30000);           // triggers CSS transition
                     setTimeout(() => { tetera.remove(); }, 3000); // remove after animation
                 }
             };
